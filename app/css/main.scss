@@ -1,0 +1,145 @@
+$icon-font-path: '../fonts/';
+
+@font-face {
+  font-family: 'ADAM-CGPRO';
+  src: url( $icon-font-path + 'ADAM-CGPRO.eot?#iefix') format('embedded-opentype'),  url($icon-font-path + 'ADAM-CGPRO.otf')  format('opentype'),
+       url($icon-font-path + 'ADAM-CGPRO.woff') format('woff'), url($icon-font-path + 'ADAM-CGPRO.ttf')  format('truetype'), url($icon-font-path + 'ADAM-CGPRO.svg#ADAM.CGPRO') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-bottom: 20px;
+  font: 14px/18px "ADAM-CGPRO", "Lantinghei SC","Microsoft YaHei","微软雅黑","STHeiti",メイリオ, Meiryo, 'ヒラギノ角ゴ Pro w3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', 'MS P Gothic', STXihei, 'HEITI TC', 黑體-繁, 微軟正黑體, 黑體, Arial, Helvetica, sans-serif,"微軟正黑體",'cwTeXHei', 'cwTeXYen', "Segoe UI","Helvetica Neue", cursive;
+  color:#696969;
+  a{
+    color:#000;
+    transition-duration: 0.15s;
+    &:focus,&:hover,&:active,&.active{
+      transition-duration: 0.25s;
+      color:#a99655;
+      outline:0;
+      text-decoration: none;
+    }
+  }
+  nav{
+    width:100%;
+    border:0;
+    ul{
+      width:840px;
+      text-align: center;
+      letter-spacing: 15px;
+      margin:0;
+      padding:0;
+      line-height: 78px;
+      li{
+        list-style:none;
+        letter-spacing: 1px;
+        float:left;
+        display: block;
+        height: 100%;
+        margin-right: 2px;
+        a{
+          color:#fff;
+          display: block;
+          height: 100%;
+          padding:0 17px;
+          &:hover{
+            color:#000;
+            background:#fff;
+          }
+        }
+        &.active{
+          a{
+            color:#000;
+            background:#fff;
+          }
+        }
+      }
+      &.social{
+        float: right;
+        width:140px;
+        li{
+          a{
+            font-size: percentage(16/14);
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    &.mm-opened{
+      z-index: 1;
+    }
+  }
+  ul{
+    margin:0;
+    padding:0;
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+
+  h3{
+    font-size: percentage(18/14);
+  }
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+header {
+  background: #000;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+@import "section/kv";
+
+.container{
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 1100px) {
+  .container {
+    max-width: 1010px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+}

@@ -1,0 +1,49 @@
+#kv{
+  max-height: 666px;
+
+  #blueimp-gallery-carousel{
+        box-shadow:none;
+    position: relative;
+    top:0;
+    width:100%;
+    height: 666px;
+    overflow: hidden;
+    padding:0;
+    margin: 0;
+    .prev,.next{
+      border:0;
+      background:none;
+    }
+    .slides{
+      height: 666px;
+      overflow: hidden;
+      .slide{
+        width: auto!important;
+        display: inline-block;
+
+        @media (max-width: 767px)   {
+          overflow:hidden;
+          position:relative;
+        }
+        .slide-content{
+          height: auto;
+          max-height: none;
+          vertical-align: middle;
+            max-width: none;
+          
+          @media (max-width: 767px)   {
+            top:0;
+            position:absolute;
+            height: 100%;
+            width: auto;
+            max-width: none;
+          }
+        }
+      }
+    }
+    .indicator{
+      display: block;
+    }
+
+  }
+}
