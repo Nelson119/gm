@@ -1,0 +1,72 @@
+/* Custom page header */
+header {
+  background: #fff;
+  height:78px;
+  aside{
+    background: #fff;
+    height:78px;
+  }
+  #menu{
+    width:100%;
+    background: #000;
+    border:0;
+    position:relative;
+    ul{
+      width:840px;
+      text-align: center;
+      letter-spacing: 15px;
+      margin:0;
+      padding:0;
+      line-height: 78px;
+      li{
+        list-style:none;
+        letter-spacing: 1px;
+        float:left;
+        display: block;
+        height: 100%;
+        margin-right: 2px;
+        &:hover,&.active{
+          color:#000;
+          background:#fff;
+          a,a:active{
+            color:inherit;
+          }
+        }
+        a{
+          color:#fff;
+          display: block;
+          height: 100%;
+          padding:0 17px;
+          &:focus{
+            color:#fff;
+          }
+        }
+      }
+      &.social{
+        float: right;
+        width:140px;
+        li{
+          a{
+            font-size: percentage(16/14);
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    ol{
+      position:absolute;
+      width:100%;
+      left:0;
+      padding:5px;
+      li{
+        &:hover{
+          background:none;
+          color:$main-active-color;
+        }
+      }
+    }
+    &.mm-opened{
+      z-index: 1;
+    }
+  }
+}

@@ -6,7 +6,9 @@
     "modernizr": "~2.8.1",
     "blueimp-gallery": "~2.16.0",
     "lodash": "~3.10.1",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "superfish": "~1.7.6",
+    "slick-carousel": "~1.5.8"
   },
   "overrides": {
     "bootstrap-sass": {

@@ -13,6 +13,8 @@ $icon-font-path: '../fonts/';
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+$main-active-color:         #a99655 !default;
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -30,58 +32,9 @@ body {
     transition-duration: 0.15s;
     &:focus,&:hover,&:active,&.active{
       transition-duration: 0.25s;
-      color:#a99655;
+      color:$main-active-color;
       outline:0;
       text-decoration: none;
-    }
-  }
-  nav{
-    width:100%;
-    border:0;
-    ul{
-      width:840px;
-      text-align: center;
-      letter-spacing: 15px;
-      margin:0;
-      padding:0;
-      line-height: 78px;
-      li{
-        list-style:none;
-        letter-spacing: 1px;
-        float:left;
-        display: block;
-        height: 100%;
-        margin-right: 2px;
-        a{
-          color:#fff;
-          display: block;
-          height: 100%;
-          padding:0 17px;
-          &:hover{
-            color:#000;
-            background:#fff;
-          }
-        }
-        &.active{
-          a{
-            color:#000;
-            background:#fff;
-          }
-        }
-      }
-      &.social{
-        float: right;
-        width:140px;
-        li{
-          a{
-            font-size: percentage(16/14);
-            padding: 0 8px;
-          }
-        }
-      }
-    }
-    &.mm-opened{
-      z-index: 1;
     }
   }
   ul{
@@ -106,10 +59,7 @@ body {
   padding-right: 15px;
 }
 
-/* Custom page header */
-header {
-  background: #000;
-}
+@import "section/menu";
 
 /* Custom page footer */
 .footer {
