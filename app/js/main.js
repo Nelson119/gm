@@ -21,10 +21,11 @@ $(function(){
 	        $('ul:eq(0)', header).superfish();
 
 	        var kv = $('#kv');
+	        var menu = $('>.fit', header);
 			var tlheader = new TimelineMax({paused:true, onComplete:function(){}});
 
 			var originTop = header.find('.logo').css('padding-top').replace(/px/ig,'') * 1;
-			originTop = isNaN(originTop) ? 666 : originTop;
+			originTop = 666;
 			var originBottom = header.find('.logo').css('padding-bottom').replace(/px/ig,'') * 1;
 			
 
@@ -36,15 +37,23 @@ $(function(){
 				var y = 300 / originTop * i;
 
 
-				tlheader.to(header.find('.logo'), 0.0000001, {paddingTop: (originTop - i )}, 'frame-' + i);
-				tlheader.to(kv, 0.0000001, {opacity: opacity - 0.3}, 'frame-' + i);
-				tlheader.to(header.find('.logo img'), 0.0000001, {scale: scale, y: -300 +y}, 'frame-' + i);
-				tlheader.add('')
+				// tlheader.to(header.find('.logo'), 0.0000001, {paddingTop: (originTop - i )}, 'frame-' + i);
+				tlheader.to(kv, 0.000000001, {height: (originTop - i) }, 'frame-' + i);
+				// tlheader.to(kv, 1, {opacity: opacity }, 'frame-' + i);
+				// tlheader.to(header.find('.logo img'), 0.0000001, {scale: scale, y: -300 +y}, 'frame-' + i);
 			}
 	        $(window).on('scroll', function(){
-	        	var to = $(window).scrollTop();
-	        	to = (to > originTop ? originTop : to);
-				tlheader.tweenTo('frame-' + to);
+	        	var scrollTop = $(window).scrollTop();
+
+				if(scrollTop < 666){
+					tlheader.tweenTo('frame-'+scrollTop);
+				}
+				if(scrollTop >= 666){
+					tlheader.tweenTo('frame-666');
+	        		menu.addClass('fixed');
+	        	}else{
+	        		menu.removeClass('fixed');
+	        	}
 
 	        });
 			tlheader.tweenTo('frame-0');

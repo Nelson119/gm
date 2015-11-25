@@ -1,25 +1,30 @@
 /* Custom page header */
 header {
   height:78px;
+  margin-top:666px;
   .fit{
     background: #000;
     width:100%;
-    position: fixed;
+    position:relative;
     z-index: 10;
     top:0;
     left: 0;
+    &.fixed{
+      position:fixed;
+      top:0;
+    }
     a.logo{
       display: block;
-      height: 64px;
-      padding: 666px 0 0;
+      height: 84px;
+      // padding: 666px 0 0;
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
       background:#fff;
       img{
-        transform: scale(2);
+        // transform: scale(2);
         filter: invert(100%);
-        transform-origin: center 300px 0;
+        // transform-origin: center 300px 0;
       }
     }
   }
@@ -36,6 +41,7 @@ header {
       padding:0;
       line-height: 78px;
       letter-spacing: 0;
+      font-size: 0;
       display: inline;
       li{
         vertical-align: top;
@@ -44,7 +50,6 @@ header {
         letter-spacing: 1px;
         display: inline-block;
         height: 100%;
-        margin-right: 2px;
         font-size: 14px;
         letter-spacing: 0;
         &:hover,&.active{
@@ -52,6 +57,9 @@ header {
           background:#fff;
           a,a:active{
             color:inherit;
+          }
+          div{
+            display: block;
           }
         }
         a{
@@ -79,7 +87,8 @@ header {
     div{
       width:100%;
       background:#fff;
-      position:fixed;
+      position:absolute;
+      display: none;
       left:0;
       ol{
         display: block;
