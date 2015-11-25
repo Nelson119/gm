@@ -8,7 +8,8 @@
     "lodash": "~3.10.1",
     "font-awesome": "~4.4.0",
     "superfish": "~1.7.6",
-    "slick-carousel": "~1.5.8"
+    "slick-carousel": "~1.5.8",
+    "gsap": "~1.18.0"
   },
   "overrides": {
     "bootstrap-sass": {

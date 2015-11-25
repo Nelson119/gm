@@ -1,6 +1,8 @@
 #kv{
   max-height: 666px;
   overflow: hidden;
+  position: relative;
+  z-index: 11;
   .slick-slide{
     position:relative;
     &:after{
@@ -21,45 +23,21 @@
       transition-duration:0.25s;
     }
   }
-  // #blueimp-gallery-carousel{
-  //   box-shadow:none;
-  //   position: relative;
-  //   margin: 0 auto;
-  //   width:980px;
-  //   height: 666px;
-  //   padding:0;
-  //   .prev,.next{
-  //     border:0;
-  //     background:none;
-  //   }
-  //   .slides{
-  //     height: 666px;
-  //     .slide{
-  //       display: inline-block;
-
-  //       @media (max-width: 767px)   {
-  //         overflow:hidden;
-  //         position:relative;
-  //       }
-  //       .slide-content{
-  //         height: auto;
-  //         max-height: none;
-  //         max-width: none;
-  //         vertical-align: middle;
-          
-  //         @media (max-width: 767px)   {
-  //           top:0;
-  //           position:absolute;
-  //           height: 100%;
-  //           width: auto;
-  //           max-width: none;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   .indicator{
-  //     display: block;
-  //   }
-
-  // }
+  .slick-arrow{
+    position:absolute;
+    width:25px;
+    height:45px;
+    z-index: 1;
+    &:before{
+      display: none;
+    }
+  }
+  .slick-prev{
+    left:30px;
+    background:url(../img/kv/arrow-prev.png);
+  }
+  .slick-next{
+    right:30px;
+    background:url(../img/kv/arrow-next.png) no-repeat;
+  }
 }

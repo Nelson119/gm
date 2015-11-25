@@ -5,23 +5,6 @@
 $(function(){
 	//kv
 	if($('#kv').length){
-
-		// blueimp.Gallery($('#kv .links'), {
-		// 		container: '#blueimp-gallery-carousel',
-		// 		clearSlides: false,
-		// 		carousel: true,
-		// 		indicatorOptions: {
-		// 			// The tag name, Id, element or querySelector of the indicator container:
-		// 			indicatorContainer: 'ol',
-		// 			// The class for the active indicator:
-		// 			activeIndicatorClass: 'active',
-		// 			// Defines if the gallery indicators should display a thumbnail:
-		// 			thumbnailIndicators: false,
-
-		// 			stretchImages:false
-		// 		}
-		// 	}
-		// );
 		$('#kv ul').slick({
 		  dots: true,
 		  infinite: true,
@@ -34,10 +17,38 @@ $(function(){
 
 	//nav
 	if($('#menu').length){
-        $('#menu ul:eq(0)').superfish({
-            onShow: function(){
-            	console.log(this);
-            }
-        });
+		(function(header){
+	        $('ul:eq(0)', header).superfish();
+
+	        var kv = $('#kv');
+			var tlheader = new TimelineMax({paused:true, onComplete:function(){}});
+
+			var originTop = header.find('.logo').css('padding-top').replace(/px/ig,'') * 1;
+			originTop = isNaN(originTop) ? 666 : originTop;
+			var originBottom = header.find('.logo').css('padding-bottom').replace(/px/ig,'') * 1;
+			
+
+			for(var i = 0;i <= originTop;i++){
+				var originScale = 2;
+				var smallScale = 0.5;
+				var scale = smallScale + (originTop - i) * (originScale - smallScale) / originTop;
+				var opacity = 1 - i / originTop;
+				var y = 300 / originTop * i;
+
+
+				tlheader.to(header.find('.logo'), 0.0000001, {paddingTop: (originTop - i )}, 'frame-' + i);
+				tlheader.to(kv, 0.0000001, {opacity: opacity - 0.3}, 'frame-' + i);
+				tlheader.to(header.find('.logo img'), 0.0000001, {scale: scale, y: -300 +y}, 'frame-' + i);
+				tlheader.add('')
+			}
+	        $(window).on('scroll', function(){
+	        	var to = $(window).scrollTop();
+	        	to = (to > originTop ? originTop : to);
+				tlheader.tweenTo('frame-' + to);
+
+	        });
+			tlheader.tweenTo('frame-0');
+			window.tlheader = tlheader;
+		}($('header')));
     }
 });
