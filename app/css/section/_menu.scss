@@ -15,7 +15,6 @@ header {
       display: block;
       height: 50px;
       opacity: 0;
-      // padding: 666px 0 0;
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
@@ -62,15 +61,22 @@ header {
         height: 100%;
         font-size: 14px;
         letter-spacing: 0;
-        &:hover,&.active{
-          color:#000;
-          background:#fff;
-          a,a:active{
-            color:inherit;
-          }
+        &:hover{
           div{
             display: block;
           }
+        }
+        &:hover,&.active{
+          color:#000;
+          background:#fff;
+          a,a:active,a:focus{
+            color:inherit;
+          }
+        }
+
+        &.off{
+          color:#fff;
+          background:#000;
         }
         a{
           font-family: "ADAM-CGPRO", 'MS P Gothic', Arial, Helvetica, sans-serif,"微軟正黑體", "Segoe UI","Helvetica Neue", cursive;
@@ -105,6 +111,7 @@ header {
         display: block;
         width:980px;
         margin:0 auto;
+        padding:0;
         text-align: left;
         line-height: 30px;
         margin-top:17px;
@@ -112,17 +119,36 @@ header {
         a{
           font-family: "Lantinghei SC","Microsoft YaHei","微软雅黑","STHeiti",メイリオ, Meiryo, 'ヒラギノ角ゴ Pro w3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', 'MS P Gothic', STXihei, 'HEITI TC', 黑體-繁, 微軟正黑體, 黑體, "微軟正黑體";
           background:none;
-          display: inline-block;
           color:inherit;
+          border-right:1px solid #959595;
+          line-height:12px;
+          vertical-align: middle;
           &:hover{
             background:none;
             color:$main-active-color;
+          }
+        }
+        li:first-child{
+          a{
+            border-left:1px solid #959595;
           }
         }
       }
     }
     &.mm-opened{
       z-index: 1;
+    }
+    &:hover:after{
+      display: block;
+      width:100%;
+      position:fixed;
+      height:100%;
+      left:0;
+      top:0;
+      content:' ';
+      background:rgba(0,0,0,0.5);
+      z-index:-1;
+      transition-duration: 0.25s;
     }
   }
 }
