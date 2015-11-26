@@ -98,6 +98,31 @@ header {
             font-size: percentage(16/14);
             padding: 0 8px;
           }
+          &.search{
+            div{
+              .center{
+                width:980px;
+                margin:0 auto;
+                text-align:left;
+                padding:20px 0 20px 3px;
+                line-height:20px;
+              }
+              i{
+                font-size: percentage(22/14);
+                color:#a4a5a5;
+              }
+            }
+            input{
+              font-family: 'PT Sans', sans-serif;
+              width:600px;
+              margin-left:10px;
+              border:0;
+              &:focus{
+                border:0;
+                outline:none!important;
+              }
+            }
+          }
         }
       }
     }
