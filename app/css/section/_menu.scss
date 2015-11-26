@@ -1,9 +1,8 @@
 /* Custom page header */
 header {
-  height:78px;
-  margin-top:666px;
+  height:128px;
+  margin-top:602px;
   .fit{
-    background: #000;
     width:100%;
     position:relative;
     z-index: 10;
@@ -11,20 +10,28 @@ header {
     left: 0;
     &.fixed{
       position:fixed;
-      top:0;
     }
     a.logo{
       display: block;
-      height: 84px;
+      height: 50px;
+      opacity: 0;
       // padding: 666px 0 0;
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
-      background:#fff;
+      background:rgba(255,255,255,0.6);
+      transform-origin:bottom center 0;
+      svg { 
+        fill: #fff;
+        path{
+          fill:#000;
+        }
+      }
       img{
-        // transform: scale(2);
-        filter: invert(100%);
-        // transform-origin: center 300px 0;
+        transform: translateY(10px);
+        height:50px;
+        width:auto;
+        transform-origin:bottom center 0;
       }
     }
   }
@@ -36,6 +43,9 @@ header {
     width:980px;
     margin:0 auto;
     max-height: 78px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
     ul{
       margin:0;
       padding:0;
@@ -63,6 +73,7 @@ header {
           }
         }
         a{
+          font-family: "ADAM-CGPRO", 'MS P Gothic', Arial, Helvetica, sans-serif,"微軟正黑體", "Segoe UI","Helvetica Neue", cursive;
           color:#fff;
           display: block;
           height: 100%;
@@ -99,6 +110,7 @@ header {
         margin-top:17px;
         margin-bottom:23px;
         a{
+          font-family: "Lantinghei SC","Microsoft YaHei","微软雅黑","STHeiti",メイリオ, Meiryo, 'ヒラギノ角ゴ Pro w3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', 'MS P Gothic', STXihei, 'HEITI TC', 黑體-繁, 微軟正黑體, 黑體, "微軟正黑體";
           background:none;
           display: inline-block;
           color:inherit;
