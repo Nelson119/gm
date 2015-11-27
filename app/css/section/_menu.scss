@@ -15,11 +15,10 @@ header {
       display: block;
       height: 50px;
       opacity: 0;
-      // padding: 666px 0 0;
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
-      background:rgba(255,255,255,0.6);
+      background:rgba(255,255,255,0.8);
       transform-origin:bottom center 0;
       svg { 
         fill: #fff;
@@ -37,12 +36,13 @@ header {
   }
   aside{
     background: #000;
-    height:auto;
+    height:78px;
   }
   #menu{
     width:980px;
     margin:0 auto;
     max-height: 78px;
+    z-index: 1;
     @media screen and (max-width: 767px) {
       display: none;
     }
@@ -62,22 +62,38 @@ header {
         height: 100%;
         font-size: 14px;
         letter-spacing: 0;
+        transition-duration: 0.25s;
+        &:hover{
+          div{
+            ol, .center{
+              line-height: 30px!important;
+              height:auto!important;
+              opacity: 1!important;
+              margin:23px auto 10px!important;
+              transition-duration: 0.55s!important;
+              transition-property: margin opacity!important;
+            }
+          }
+        }
         &:hover,&.active{
           color:#000;
           background:#fff;
-          a,a:active{
+          transition-duration: 0.55s;
+          a,a:active,a:focus{
             color:inherit;
-          }
-          div{
-            display: block;
+            transition-duration: 0.55s;
           }
         }
+
+        &.off{
+          color:#fff;
+          background:#000;
+        }
         a{
-          font-family: "ADAM-CGPRO", 'MS P Gothic', Arial, Helvetica, sans-serif,"微軟正黑體", "Segoe UI","Helvetica Neue", cursive;
           color:#fff;
           display: block;
           height: 100%;
-          padding:0 17px;
+          padding:0 20px;
           &:focus{
             color:#fff;
           }
@@ -90,7 +106,35 @@ header {
         li{
           a{
             font-size: percentage(16/14);
-            padding: 0 8px;
+            padding: 0 10px;
+          }
+          &.search{
+            div{
+              .center{
+                width:980px;
+                height:0;
+                overflow: hidden;
+                margin:0 auto;
+                padding:0;
+                text-align:left;
+                line-height:0;
+                transition-duration: 0.25s;
+              }
+              i{
+                font-size: percentage(22/14);
+                color:#a4a5a5;
+              }
+            }
+            input{
+              font-family: 'PT Sans', sans-serif;
+              width:940px;
+              margin-left:10px;
+              border:0;
+              &:focus{
+                border:0;
+                outline:none!important;
+              }
+            }
           }
         }
       }
@@ -99,30 +143,124 @@ header {
       width:100%;
       background:#fff;
       position:absolute;
-      display: none;
+      display: block;
       left:0;
+      z-index: 1;
       ol{
         display: block;
         width:980px;
+        height:0;
+        overflow: hidden;
         margin:0 auto;
+        padding:0;
         text-align: left;
-        line-height: 30px;
-        margin-top:17px;
-        margin-bottom:23px;
+        line-height: 0;
+        opacity: 0;
+        transition-duration: 0.25s;
         a{
-          font-family: "Lantinghei SC","Microsoft YaHei","微软雅黑","STHeiti",メイリオ, Meiryo, 'ヒラギノ角ゴ Pro w3', 'Hiragino Kaku Gothic Pro', Osaka, 'ＭＳ Ｐゴシック', 'MS P Gothic', STXihei, 'HEITI TC', 黑體-繁, 微軟正黑體, 黑體, "微軟正黑體";
           background:none;
-          display: inline-block;
           color:inherit;
+          border-right:1px solid #959595;
+          line-height:14px;
+          vertical-align: top;
+          padding-bottom:2px;
           &:hover{
             background:none;
             color:$main-active-color;
+          }
+        }
+        li:first-child{
+          a{
+            border-left:1px solid #959595;
           }
         }
       }
     }
     &.mm-opened{
       z-index: 1;
+    }
+    &:after{
+      opacity: 0;
+      position:fixed;
+      height:0;
+      left:0;
+      top:0;
+      content:' ';
+      background:rgba(0,0,0,0.5);
+      z-index:-1;
+    }
+    &:hover:after{
+      display: block;
+      width:100%;
+      height:100%;
+      opacity: inherit;
+    }
+  }
+  .marquee{
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    padding:10px 0;
+    ul{
+      display: inline-block;
+      height: 20px;
+      letter-spacing: 0;
+      &:hover{
+        &:before, &:after{
+          font-style: italic;
+          transition-duration: 2s;
+        }
+      }
+      &:before{
+        content:'// ';
+        padding-right:1px;
+      }
+      &:after{
+        content:'//';
+      }
+      &:before,&:after{
+        font-family: FontAwesome;
+        color:#e74b8c;
+        display: inline;
+      }
+      li{
+        line-height: 0;
+        letter-spacing: -1em;
+        opacity:0;
+        transition-duration:1.5s;
+        position:relative;
+        // font-size: 0;
+        transform:rotateY(90deg);
+        a{
+          font-size: percentage(11/14);
+        }
+        &.active{
+          letter-spacing: 0.1em;
+          opacity:inherit;
+          transition-delay: 1.45s;
+          transition-duration:3s;
+          // font-size: inherit;
+          transform:rotateY(0deg);
+          vertical-align: center;
+        }
+        &:after{
+          position:absolute;
+          display: block;
+          left:0;
+          bottom:-11px;
+          width:0;
+          height:100%;
+          border-top:1px solid rgba(255,255,255,0.5);
+          content: ' ';
+        }
+        &:hover:after{
+          width:100%;
+          transition-duration:1s;
+          border-top:1px solid #e74b8c;
+        }
+      }
+    }
+    a{
+      color:#e74b8c;
     }
   }
 }

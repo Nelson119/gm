@@ -9,7 +9,8 @@
     "font-awesome": "~4.4.0",
     "superfish": "~1.7.6",
     "slick-carousel": "~1.5.8",
-    "gsap": "~1.18.0"
+    "gsap": "~1.18.0",
+    "stickyfloat": "~7.5.0"
   },
   "overrides": {
     "bootstrap-sass": {
