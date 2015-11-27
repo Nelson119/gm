@@ -1,5 +1,112 @@
 .page.home{
-  aside{
-    // height:3000px;
+  .container{
+	h3{
+		font-family: 'Times New Roman';
+		display: block;
+		font-size:percentage(44/14);
+		text-align: center;
+		font-weight: 500;
+		color:#000;
+		&:before, &:after{
+		    border-top: 1px solid #aaa;
+		    content: " ";
+		    height: 0;
+		    left: -96%;
+		    line-height: 300px;
+		    position: absolute;
+		    top: 23%;
+		    width: 115%;
+		}
+		&:after{
+		    right: -96%;
+	    	left: auto;
+		}
+
+		span{
+			font-family:  "微軟正黑體","Lantinghei SC","Microsoft YaHei","微软雅黑","STHeiti",メイリオ,Meiryo,"ヒラギノ角ゴ Pro w3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS P Gothic",STXihei,"HEITI TC",黑體-繁,黑體,Arial,Helvetica,sans-serif,"Segoe UI","Helvetica Neue",cursive;
+			display: block;
+			font-size: percentage(16/44);
+			line-height: 1.8em;
+			color:#53565a;
+			letter-spacing:0.65em;
+			&:before{
+				font-family: 'Tahoma';
+				font-size: percentage(30/16);
+				display: block;
+				content:'×';
+				text-align: center;
+			}
+		}
+	}
+    .reports{
+    	margin-top:80px;
+
+    	ul{
+    		margin-top:20px;
+    	}
+
+    	.category{
+    		color:#626262;
+    		padding: 0;
+    	}
+    	i.fa{
+    		padding: 4px 0;
+    		color:#727171;
+    		&:before{
+    			letter-spacing: 0.5em;
+    		}
+    		line-height: 20px;
+    	}
+    	.thumb{
+    		padding:0;
+			img{
+				max-width: 100%;
+			}
+      	}
+      	h4{
+      		font-size:14px;
+      		max-width: 210px;
+      		font-weight: bold;
+      		padding:0;
+      		min-height:55px;
+      		&:before{
+      			border-top: 3px solid #ffb6ba;
+      			width: 22px;
+      			height: 0;
+      			display: block;
+      			content:' ';
+      			margin:0 0 15px 0;
+      		}
+      	}
+      	p{
+      		font-size:12px;
+      		max-width: 289px;
+      		padding:0;
+      	}
+    }
+    .customs{
+
+		h3{
+			&:before, &:after{
+			    width: 110%;
+			}
+		}
+    }
+    .creativity{
+
+		h3{
+			&:before, &:after{
+			    width: 101%;
+			}
+		}
+    }
+    .interview{
+
+		h3{
+			&:before, &:after{
+			    width: 101.5%;
+			}
+		}
+    }
   }
 }

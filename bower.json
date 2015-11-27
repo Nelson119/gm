@@ -10,7 +10,9 @@
     "superfish": "~1.7.6",
     "slick-carousel": "~1.5.8",
     "gsap": "~1.18.0",
-    "stickyfloat": "~7.5.0"
+    "stickyfloat": "~7.5.0",
+    "detectizr": "~2.2.0",
+    "jQuery.mmenu": "~5.5.3"
   },
   "overrides": {
     "bootstrap-sass": {
