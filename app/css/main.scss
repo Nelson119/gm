@@ -54,20 +54,8 @@ body {
     font-size: percentage(18/14);
   }
 
-  .page{
-    &.cover{
-      position:relative;
-      &:after{
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
-        height:100%;
-        content:' ';
-        background:rgba(0,0,0,0.5)
-      }
-    }
-  }
+  @import "section/page";
+
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -103,11 +91,12 @@ body {
     }
   }
   p{
-    margin:0 auto;
+    margin:10px auto 0;
     text-align: center;
     color:#fff;
     font-size:percentage(12/14);
     font-family:arial;
+    letter-spacing: 1px;
   }
   ul{
     margin:25px auto 40px;
@@ -138,6 +127,36 @@ body {
       }
     }
   }
+  ol{
+    margin:25px auto 40px;
+    padding-top:25px;
+    width:100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 25px;
+    @media  (min-width: 768px) and (max-width: 1170px) {
+      letter-spacing: 10px;
+    }
+    @media  screen and (min-width: 1170px) {
+      display: none;
+    }
+    padding:0;
+    li{
+      display: inline-block;
+      letter-spacing: 1px;
+      font-size:percentage(40/14);
+      @media  (min-width: 768px) and (max-width: 1170px) {
+        font-size:percentage(20/14);
+      }
+      a{
+        color:#fff;
+        &:hover,&:focus,&:active{
+          color:$main-active-color;
+        }
+      }
+    }
+  }
 }
 
 @import "section/kv";
@@ -147,6 +166,10 @@ body {
 }
 
 @import "section/home";
+
+@import "section/reportlist";
+
+@import "section/interviewlist";
 
 
 /* Responsive: Portrait tablets and up */

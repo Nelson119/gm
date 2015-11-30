@@ -12,7 +12,8 @@
     "gsap": "~1.18.0",
     "stickyfloat": "~7.5.0",
     "detectizr": "~2.2.0",
-    "jQuery.mmenu": "~5.5.3"
+    "jQuery.mmenu": "~5.5.3",
+    "within-viewport": "~1.0.0"
   },
   "overrides": {
     "bootstrap-sass": {

@@ -1,0 +1,23 @@
+.page.report-list{
+	min-height:600px;
+    h2{
+
+    }
+    hr{
+        margin-top:30px;
+    }
+    .highlight{
+        margin-top: 25px;
+    } 
+    .two-col{
+        .category{
+            color:#535353;
+            &:hover{
+                color:$main-active-color;
+            }
+        }
+    }
+    .three-col{
+        margin-bottom:80px;
+    }
+}

@@ -13,7 +13,7 @@
   @media  (min-width: 768px) and (max-width: 1170px) {
     position:absolute;
     margin-top:96px;
-    max-height: 580px;
+    max-height: 480px;
   }
   &.pinned{
     position: absolute;
@@ -43,7 +43,7 @@
       max-height: 480px;
     }
     @media  (min-width: 768px) and (max-width: 1170px) {
-      max-height: 580px;
+      max-height: 480px;
     }
   }
   .slick-slide{
@@ -52,7 +52,7 @@
       max-height: 480px;
     }
     @media  (min-width: 768px) and (max-width: 1170px) {
-      max-height: 580px;
+      max-height: 480px;
     }
     &:after{
       transition-duration:0.15s;
@@ -71,7 +71,7 @@
         max-height: 430px;
       }
       @media (min-width: 768px) and  (max-width: 1170px){
-        max-height: 580px;
+        max-height: 480px;
       }
     }
   }

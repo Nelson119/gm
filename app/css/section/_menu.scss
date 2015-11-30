@@ -1,8 +1,11 @@
 /* Custom page header */
-.mmenu{
+.mm-menu{
+  z-index: 20;
+}
+.mmenu-head{
+  z-index: 19;
   width:100%;
   background:rgba(0,0,0,0.9);
-  z-index: 10;
   a{
     color:#fff;
     &:before{
@@ -32,6 +35,9 @@
 header {
   height:128px;
   margin-top:602px;
+  @media screen and (max-width: 1170px) {
+    margin-top:480px;
+  }
   .fit{
     width:100%;
     position:relative;
@@ -67,7 +73,7 @@ header {
   aside{
     background: #000;
     height:78px;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1170px) {
       background: rgba(0,0,0,0);
     }
   }
@@ -194,7 +200,7 @@ header {
           line-height:14px;
           vertical-align: top;
           padding-bottom:2px;
-          &:hover{
+          &:hover,&:active,&:focus{
             background:none;
             color:$main-active-color;
           }
@@ -209,24 +215,14 @@ header {
     &.mm-opened{
       z-index: 1;
     }
-    &:after{
-      opacity: 0;
-      position:fixed;
-      height:0;
-      left:0;
-      top:0;
-      content:' ';
-      background:rgba(0,0,0,0.5);
-      z-index:-1;
+    @media screen and (max-width: 767px) {
+      // display: none;
     }
-    &:hover:after{
+    &:hover +.marquee:after{
       display: block;
       width:100%;
       height:100%;
       opacity: inherit;
-    }
-    @media screen and (max-width: 767px) {
-      display: none;
     }
   }
   .marquee{
@@ -279,16 +275,21 @@ header {
           position:absolute;
           display: block;
           left:0;
-          bottom:-11px;
+          bottom:-110%;
           width:0;
           height:100%;
           border-top:1px solid rgba(255,255,255,0.5);
           content: ' ';
+          @media screen and (max-width: 1170px) {
+            display: none;
+          }
         }
-        &:hover:after{
-          width:100%;
-          transition-duration:1s;
-          border-top:1px solid #e74b8c;
+        &:hover{
+          &:after{
+            width:100%;
+            transition-duration:1s;
+            border-top:1px solid #e74b8c;
+          }
         }
       }
       @media screen and (max-width: 767px) {
@@ -297,6 +298,16 @@ header {
     }
     a{
       color:#e74b8c;
+    }
+    &:after{
+      opacity: 0;
+      position:fixed;
+      height:0;
+      left:0;
+      top:0;
+      content:' ';
+      background:rgba(0,0,0,0.5);
+      z-index:-1;
     }
   }
 }

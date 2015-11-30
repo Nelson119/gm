@@ -41,7 +41,7 @@ $(function(){
 
 	//kv
 	if($('#kv').length){
-		$('#kv ul').slick({
+		var el = $('#kv ul').slick({
 			dots: true,
 			infinite: true,
 			slidesToShow: 1,
@@ -52,6 +52,15 @@ $(function(){
 			easing: 'ease-out',
 			pauseOnHover: true,
 			speed: 750
+		});
+
+		$(window).on('scroll', function(){
+			el.slick('slickPause');
+			el.attr('tag', 'pause');
+			if(withinviewport($('#kv ul'), {bottom: 116})){
+				el.attr('tag', 'play');
+				el.slick('slickPlay');
+			}
 		});
 
 	}
@@ -72,8 +81,7 @@ $(function(){
 					var h = menu.offset().top - scrollTop + 64;
 					TweenMax.set(kv, {height: h});
 				}});
-				var distance = $('#kv').height();
-
+				var distance = 666;
 
 				for(var i = 0; i <= distance; i++){
 					var y = 0;
@@ -115,10 +123,10 @@ $(function(){
 				});
 
 			}else if(mobile || tablet){
-				$('header #menu').mmenu({});
-				var mmenu = $('.mm-menu').data( 'mmenu' );
-				$('#mm').click(function(event) {
-					event.preventDefault();
+				$('#menu').mmenu({navbar:{title:document.title}});
+				var mmenu = $('#menu').data( 'mmenu' );
+				$('#mm').on('click', function(ev) {
+					ev.preventDefault();
 					mmenu.open();
 				});
 			}
@@ -164,21 +172,59 @@ $(function(){
 	}
 
 	//clients
-	if($('.clients').length){
-		var num = $('.clients ul li').length;
-		var s = $('.clients ul').slick({
+	if($('.home .clients').length){
+		var num = $('.home .clients ul li').length;
+		var s = $('.home .clients ul').slick({
 			// dots: true,
 			infinite: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
+			slidesToShow: 9,
+			slidesToScroll: 9,
 			centerMode: true,
 			variableWidth: true,
 			// autoplay: true,
-			autoplaySpeed: 3000,
+			// autoplaySpeed: 3000,
 			easing: 'ease-out',
-			pauseOnHover: true,
+			// pauseOnHover: true,
 			speed: 750
 		});
+		$('.home .clients ul li a').eq(num/2).trigger('click');
+	}
 
+	//show go to top
+
+	if($('.gotop').length){
+		$(window).on('scroll', function(){
+			var scrollTop = $(window).scrollTop() + $(window).height();
+			if(scrollTop >= $('.footer').offset().top){
+				$('.gotop').addClass('in');
+			}
+			else{
+				$('.gotop').removeClass('in');
+			}
+			$('.gotop').unbind('click');
+			$('.gotop').bind('click', function(){
+				var tl = new TimelineMax();
+				tl.add(
+					TweenMax.to('html', 0.1, {
+						opacity: 0.15
+					})
+				);
+				
+
+				tl.set('html,body', {
+					scrollTop: 690
+				});
+
+				tl.add([
+					TweenMax.to('html', 0.6, {
+						opacity: 1
+					}),
+					TweenMax.to('html,body', 0.6, {
+						scrollTop: 0
+					})
+				]);
+				
+			});
+		}).trigger('resize');
 	}
 });
