@@ -16,6 +16,9 @@ $icon-font-path: '../fonts/';
 
 $main-active-color:         #a99655 !default;
 
+// $main-active-color:         #ffb6ba !default;
+
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -83,7 +86,58 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #545454;
+  background:#000;
+  text-align: center;
+  .logo{
+    display: block;
+    margin:0 auto;
+    width:137px;
+    svg#logo{
+      width: 100%;
+      fill:#fff;
+      transition-duration: 0.25s;
+      &:hover,&:focus,&:active{
+        fill:$main-active-color;
+      }
+    }
+  }
+  p{
+    margin:0 auto;
+    text-align: center;
+    color:#fff;
+    font-size:percentage(12/14);
+    font-family:arial;
+  }
+  ul{
+    margin:25px auto 40px;
+    padding-top:25px;
+    border-top:1px solid #404040;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    li{
+      display: inline-block;
+      letter-spacing: 1px;
+      font-size:percentage(12/14);
+      a{
+        color:#fff;
+        &:hover,&:focus,&:active{
+          color:$main-active-color;
+        }
+      }
+      &+li{
+        &:before{
+          display: inline-block;
+          content:'/';
+          padding: 0 10px;
+          font-style:italic;
+          color:#404040;
+        }
+
+      }
+    }
+  }
 }
 
 @import "section/kv";

@@ -1,11 +1,44 @@
 'use strict';
 /*eslint-disable new-cap, no-unused-vars */
 /*global  $, TweenMax, TimelineMax */
-var desktop = $('html.desktop').length == 1;
-var mobile = $('html.mobile').length == 1;
-var tablet = $('html.tablet').length == 1;
+var desktop = $('html.desktop').length === 1;
+var mobile = $('html.mobile').length === 1;
+var tablet = $('html.tablet').length === 1;
 
 $(function(){
+	/*
+	* Replace all SVG images with inline SVG
+	*/
+	$('img.svg').each(function(){
+		var $img = $(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+
+		$.get(imgURL, function(data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = $(data).find('svg');
+
+			// Add replaced image's ID to the new SVG
+			if(typeof imgID !== 'undefined') {
+				$svg = $svg.attr('id', imgID);
+			}
+			// Add replaced image's classes to the new SVG
+			if(typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			}
+
+			// Remove any invalid XML tags as per http://validator.w3.org
+			$svg = $svg.removeAttr('xmlns:a');
+
+			// Replace image with new SVG
+			$img.replaceWith($svg);
+
+		}, 'xml');
+
+	});
+
+
 	//kv
 	if($('#kv').length){
 		$('#kv ul').slick({
@@ -83,10 +116,10 @@ $(function(){
 
 			}else if(mobile || tablet){
 				$('header #menu').mmenu({});
-				var menu = $('.mm-menu').data( 'mmenu' );
+				var mmenu = $('.mm-menu').data( 'mmenu' );
 				$('#mm').click(function(event) {
 					event.preventDefault();
-					menu.open();
+					mmenu.open();
 				});
 			}
 
@@ -100,7 +133,7 @@ $(function(){
 				var active = $('li.active', marquee);
 				active = active.length > 0 ? active : $('li', marquee).first();
 				if(active.hasClass('hold')){
-					reuturn;
+					return;
 				}
 				if(active.next().length){
 					active.next().siblings().removeClass('active');
@@ -117,7 +150,7 @@ $(function(){
 				$(this).addClass('hold');
 			}, function(){
 				$(this).removeClass('hold');
-			})
+			});
 			nextMq();
 			var mqTick = setInterval(nextMq, 14000);
 		}($('.marquee')));
@@ -128,5 +161,24 @@ $(function(){
 		(function(floating){
 			floating.stickyfloat({duration: 1800, delay: 0, stickToBottom: false, offsetY: 320, startOffset: 740, cssTransition: true});
 		}($('.floating-banner')));
+	}
+
+	//clients
+	if($('.clients').length){
+		var num = $('.clients ul li').length;
+		var s = $('.clients ul').slick({
+			// dots: true,
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			centerMode: true,
+			variableWidth: true,
+			// autoplay: true,
+			autoplaySpeed: 3000,
+			easing: 'ease-out',
+			pauseOnHover: true,
+			speed: 750
+		});
+
 	}
 });

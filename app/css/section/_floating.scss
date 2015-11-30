@@ -3,6 +3,9 @@
   position: absolute;
   // transition-timing-function:ease-out;
   // transition-duration:1.8s; 
+  @media screen and (max-width: 1170px) {
+    display: none;
+  }
   right: -200px;
   a{
     display: block;

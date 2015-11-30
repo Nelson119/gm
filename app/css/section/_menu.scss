@@ -2,9 +2,25 @@
 .mmenu{
   width:100%;
   background:rgba(0,0,0,0.9);
-  color:#fff;
+  z-index: 10;
+  a{
+    color:#fff;
+    &:before{
+      height: 100%;
+      vertical-align: middle;
+      display: inline-block;
+      content:' ';
+    }
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    padding-left: 15px;
+  }
   display: none;
   @media screen and (max-width: 767px) {
+    position:fixed;
+    top:0;
+    left:0;
     height:50px;
     display: block;
   }
