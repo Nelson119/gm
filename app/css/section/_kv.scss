@@ -5,55 +5,18 @@
   padding: 0;
   max-width:100%;
   top:0;
-  @media screen and (max-width: 767px) {
-    position:absolute;
-    margin-top:50px;
-    max-height: 480px;
-  }
-  @media  (min-width: 768px) and (max-width: 1170px) {
-    position:absolute;
-    margin-top:96px;
-    max-height: 480px;
+  @media screen and (max-width: 1170px) {
+    display: none;
   }
   &.pinned{
     position: absolute;
     top:616px;
   }
-  .layer-2{
-    left:0;
-    top:0;
-    opacity:0;
-    position:absolute;
-    transition-duration:0.2s;
-    transform-origin:center left 0;
-    transform: translateY(50%) scale(0.8);
-  }
-  .layer-3{
-    left:0;
-    top:0;
-    opacity:0;
-    position:absolute;
-    transition-duration:0.2s;
-    transform-origin:center right 0;
-      transform: translateX(20%) translateY(200%) scale(0.8);
-  }
   .slick-slider{
     max-height: 100%;
-    @media screen and (max-width: 767px) {
-      max-height: 480px;
-    }
-    @media  (min-width: 768px) and (max-width: 1170px) {
-      max-height: 480px;
-    }
   }
   .slick-slide{
     position:relative;
-    @media screen and (max-width: 767px) {
-      max-height: 480px;
-    }
-    @media  (min-width: 768px) and (max-width: 1170px) {
-      max-height: 480px;
-    }
     &:after{
       transition-duration:0.15s;
       display: block;
@@ -66,13 +29,7 @@
       position: absolute;
     }
     img{
-      max-height: 100%;
-      @media screen and (max-width: 767px) {
-        max-height: 430px;
-      }
-      @media (min-width: 768px) and  (max-width: 1170px){
-        max-height: 480px;
-      }
+      max-width: 100%;
     }
   }
   .slick-dots{
@@ -84,16 +41,6 @@
     &:after{
       opacity: 0;
       transition-duration:0.25s;
-    }
-    .layer-2{
-      opacity:1;
-      transition-duration:2.8s;
-      transform: scale(1) translateX(7%) translateY(50%);
-    }
-    .layer-3{
-      opacity:1;
-      transition-duration:2.8s;
-      transform: scale(1.1) translateX(0%) translateY(200%);
     }
   }
   .slick-arrow{
@@ -115,5 +62,67 @@
   .slick-next{
     right:30px;
     background:url(../img/kv/arrow-next.png) no-repeat;
+  }
+}
+
+#kvm{
+  overflow: hidden;
+  margin-top:90px;
+  @media screen and (max-width: 768px) {
+    margin-top:40px;
+  }
+  z-index: 20;
+  @media screen and (min-width: 1170px) {
+    display: none;
+  }
+  li{
+    // max-width: 100%;
+    // width:100%;
+      display: block;
+    a{
+      display: block;
+      img{
+        max-width: 100%;
+        width:100%;
+      }
+    }
+  }
+  .slick-dots{
+    bottom:10%;
+    position:absolute;
+    display: inline-block;
+    letter-spacing: 1em;
+    li{
+      display: inline-block;
+      &.slick-active{
+        button:before{
+          opacity: 0.95;
+          background:#fff;
+        }
+      }
+      button:before{
+        border: 2px solid #fff;
+        border-radius: 50%;
+        color: black;
+        content: " ";
+        font-family: "slick";
+        font-size: 6px;
+        height: 15px;
+        width: 15px;
+        left: 0;
+        opacity: 0.65;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        &:hover{
+          opacity: 0.75;
+          background:#fff;
+        }
+      }
+
+    }
+  }
+  ul{
+    margin-bottom:0;
   }
 }

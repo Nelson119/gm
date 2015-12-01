@@ -1,12 +1,22 @@
 /* Custom page header */
-.mm-menu{
-  z-index: 20;
-}
+
 .mmenu-head{
   z-index: 19;
   width:100%;
   background:rgba(0,0,0,0.9);
   a{
+    text-indent: -9999em;
+    background: url(../img/common/menu-bar.png) center center / auto 100% no-repeat ;
+    display: inline-block;
+    width:39px;
+    height: 28px;
+    position:absolute;
+    left: 15px;
+    top:15px;
+    @media screen and (max-width: 767px) {
+      width:20px;
+      height: 15px;
+    }
     color:#fff;
     &:before{
       height: 100%;
@@ -15,16 +25,14 @@
       content:' ';
     }
     vertical-align: middle;
-    display: inline-block;
-    height: 100%;
-    padding-left: 15px;
   }
   display: none;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1170px) {
     position:fixed;
     top:0;
     left:0;
-    height:50px;
+    height:40px;
+    line-height: 38px;
     display: block;
   }
   @media  (min-width: 768px) and (max-width: 1170px) {
@@ -36,7 +44,13 @@ header {
   height:128px;
   margin-top:602px;
   @media screen and (max-width: 1170px) {
-    margin-top:480px;
+    height:auto;
+  }
+  @media screen and (max-width: 1170px) {
+    margin-top:0;
+    #menu{
+      display: none;
+    }
   }
   .fit{
     width:100%;
@@ -46,6 +60,12 @@ header {
     left: 0;
     &.fixed{
       position:fixed;
+      @media screen and (max-width: 1170px) {
+        padding-top:90px;
+      }
+      @media screen and (max-width: 768px) {
+        padding-top:40px;
+      }
     }
     a.logo{
       display: block;
@@ -56,10 +76,13 @@ header {
       transition-delay: 0s;
       background:rgba(255,255,255,0.8);
       transform-origin:bottom center 0;
-      svg { 
-        fill: #fff;
-        path{
-          fill:#000;
+      svg#logo{
+        margin-top:1px;
+        height: 100%;
+        fill:#000;
+        transition-duration: 0.25s;
+        &:hover,&:focus,&:active{
+          fill:$main-active-color;
         }
       }
       img{
@@ -68,6 +91,26 @@ header {
         width:auto;
         transform-origin:bottom center 0;
       }
+      @media screen and (max-width: 1170px) {
+        position:fixed;
+        top:0;
+        width:100%;
+        left:0;
+        height:40px;
+        opacity: 1!important;
+
+        svg#logo{
+          height:100%;
+          fill:#fff;
+          margin:0;
+          z-index:50;
+          position:relative;
+          transition-duration: 0.25s;
+          &:hover,&:focus,&:active{
+            fill:$main-active-color;
+          }
+        }
+      }
     }
   }
   aside{
@@ -75,6 +118,7 @@ header {
     height:78px;
     @media screen and (max-width: 1170px) {
       background: rgba(0,0,0,0);
+      height:0;
     }
   }
   #menu{
@@ -215,9 +259,6 @@ header {
     &.mm-opened{
       z-index: 1;
     }
-    @media screen and (max-width: 767px) {
-      // display: none;
-    }
     &:hover +.marquee:after{
       display: block;
       width:100%;
@@ -259,7 +300,13 @@ header {
         position:relative;
         // font-size: 0;
         transform:rotateY(90deg);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 80%;
+        color:#e74b8c;
         a{
+        color:#e74b8c;
           font-size: percentage(11/14);
         }
         &.active{
