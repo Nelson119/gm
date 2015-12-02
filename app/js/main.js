@@ -139,18 +139,6 @@ $(function(){
 					$('li.active', menu).removeClass('off');
 				});
 
-			// }else if(mobile || tablet){
-				// $('#menu').mmenu({navbar: {title: document.title}});
-				// var mmenu = $('#menu').data( 'mmenu' );
-				// $('#menu li a[href^=#]').each(function(idx, d){
-				// 	$($(d).attr('href')).find('ol').append('<div class=\'clearfix\'></div>').appendTo($(d).parent());
-				// });
-				// $('#mm').on('click', function(ev) {
-				// 	ev.preventDefault();
-				// 	mmenu.open();
-				// });
-			// }
-
 		}($('header')));
 	}
 
