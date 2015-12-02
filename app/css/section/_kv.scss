@@ -5,6 +5,7 @@
   padding: 0;
   max-width:100%;
   top:0;
+  z-index: 11;
   @media screen and (max-width: 1170px) {
     display: none;
   }
@@ -67,10 +68,6 @@
 
 #kvm{
   overflow: hidden;
-  margin-top:90px;
-  @media screen and (max-width: 768px) {
-    margin-top:40px;
-  }
   z-index: 20;
   @media screen and (min-width: 1170px) {
     display: none;

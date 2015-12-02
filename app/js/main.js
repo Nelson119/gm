@@ -75,6 +75,19 @@ $(function(){
 
 			// if(desktop){
 
+				$('#mm').on('click', function(ev){
+					$('.mmenu-head').toggleClass('on');
+					$('body').toggleClass('menuon');
+				});
+				$('.mmenu-head').append($('#menu ul:eq(0)').clone());
+				$('.mmenu-head ul >li a').on('click', function(){
+					if(!$(this).parent().hasClass('on')){
+						$(this).parent().addClass('on').siblings().removeClass('on');
+					}else{
+						$(this).parent().removeClass('on');
+					}
+				});
+
 				$('ul:eq(0)', header).superfish();
 
 				var kv = $('#kv');
@@ -136,10 +149,6 @@ $(function(){
 				// 	ev.preventDefault();
 				// 	mmenu.open();
 				// });
-				// $('.mm-title').on('click', function(ev){
-				// 	ev.preventDefault();
-				// 	mmenu.close();
-				// });
 			// }
 
 		}($('header')));
@@ -192,11 +201,12 @@ $(function(){
 			slidesToScroll: 9,
 			centerMode: true,
 			variableWidth: true,
-			// autoplay: true,
-			// autoplaySpeed: 3000,
-			easing: 'ease-out',
-			// pauseOnHover: true,
-			speed: 750
+			autoplay: true,
+			autoplaySpeed: 0,
+			// easing: 'linear',
+			cssEase: 'linear',
+			pauseOnHover: true,
+			speed: 4000
 		});
 		$('.home .vendors ul li a').eq(num / 2).trigger('click');
 	}

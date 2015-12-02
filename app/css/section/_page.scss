@@ -1,9 +1,13 @@
 .page{
 	line-height: 1.5em;
 	letter-spacing: 1px;
+	background:#fff;
 	@media screen and (max-width: 1170px) {
 		line-height: 1.8em;
 		letter-spacing: 2px;
+	}
+	img.eye{
+		width:20px;
 	}
 	.container{
 		h3{
@@ -18,10 +22,11 @@
 			}
 
 			b{
-				font-weight: normal;
-				display: inline;
-				padding:10px;
-				background: #fff;
+			    background: rgba(255, 255, 255, 1) no-repeat scroll center center / 90% auto;
+			    color: rgba(0, 0, 0, 0);
+			    display: inline;
+			    font-weight: normal;
+			    padding: 10px 20px 0;
 				@media screen and (max-width: 1170px) {
 					margin:0;
 					padding:0 10px;
@@ -56,11 +61,11 @@
 				&:before{
 					display: block;
 					content:' ';
-					height:38px;
+					height:14px;
 					text-align: center;
+					background:url(../img/common/xx.svg) center center / auto 100% no-repeat ;
 					@media screen and (max-width: 1170px) {
 						height:10px;
-						background:url(../img/common/xx.png) center center / auto 100% no-repeat ;
 					}
 				}
 			}
@@ -72,8 +77,11 @@
 		}
 
 		.category{
-		// color:#626262;
-		padding: 0;
+			color:#626262;
+			padding: 0;
+			&:hover,&:active,&:focus{
+				color:$main-active-color;
+			}
 		}
 		i.view-counter{
 			padding: 4px 0;
@@ -198,7 +206,7 @@
 	    	}
     	}
     	.text-content{
-    		padding-top:60px;
+    		padding-top:45px;
 
 			padding-left:0;
     		border-left:1px solid #aaa;
@@ -209,7 +217,7 @@
 	    	}
     	}
 	  	.category{
-	  		padding:0 0 0 20px;
+	  		padding:0 0 15px 20px;
 			@media screen and (max-width: 1170px) {
 				display: none;
 	    	}
@@ -226,7 +234,7 @@
 	  	}
 	  	h5,p{
 	  		border-top:1px solid;
-	  		padding: 20px 0 20px 20px;
+	  		padding: 15px 0 15px 20px;
 	    	margin:0;
 			@media screen and (max-width: 1170px) {
     			border:0;
@@ -293,23 +301,34 @@
 		  	}
 
     	}
+		ul{
+			@media screen and (max-width: 1170px) {
+				padding-bottom:20px;
+			}
+		}
     }
     .sm-three-col{
-    	margin-bottom: 80px;
+    	// margin-bottom: 80px;
 		ul{
 			letter-spacing: 0;
-			line-height: 105px;
+			line-height: 40px;
+			@media screen and (max-width: 1170px) {
+				line-height: 0;
+				padding-bottom:20px;
+			}
 		}
 		li{
 			letter-spacing: 1px;
 			border:1px solid #6b6b6b;
 			line-height: 1.2em;
-			width:100%;
-			height: 400px;
+			// height: 400px;
 			overflow: hidden;
 			display: inline-block;
 			float: none;
 			margin:10px;
+			padding-bottom:20px;
+			width:300px;
+		    cursor: pointer;
 	  		@media screen and (max-width: 1170px) {
 				width:47.4%;
 				height: auto;
@@ -318,9 +337,51 @@
 				// float: left;
 				// padding:0 10px;
 	  		}
+	  		svg{
+	  			height:100%;
+	  			width:100%;
+	  			padding:10px;
+	  			position:absolute;
+	  			top:0;
+	  			left:0;
+	  			line {
+				    fill: none;
+				    stroke: $main-active-color;
+				    stroke-width: 3;
+				    transition: all 0.8s ease-in-out 0s;
+				}
+	  		}
+	  		&:hover{
+	  			svg{
+	  				line{
+
+	  					transition-delay: 0.1s;
+
+						&.top, &.bottom {
+						    stroke-dasharray: 330, 240;
+						}
+						&.left,&.right {
+					    	stroke-dasharray: 490, 400;
+					    }
+					    &.top {
+						    transform: translateX(-1000%);
+						}
+						&.bottom {
+						    transform: translateX(600px);
+						}
+						&.left {
+						    transform: translateY(920px);
+						}
+						&.right {
+						    transform: translateY(-920px);
+						}
+					}
+	  			}
+	  		}
 		}
 		.thumb{
-			padding-top:25px;
+			position:relative;
+			padding-top:15px;
 			display: block;
 			width: 100%;
 			margin:0 auto;
@@ -332,20 +393,22 @@
 	  		}
 		}
 		h5{
+			position:relative;
 			margin:20px auto 0;
 			&:before{
 				display: none;
 			}
 			&:after{
-  			border-top: 3px solid $main-active-color;
-  			height: 0;
-  			display: block;
-  			content:' ';
-  			margin:10px auto 15px;
+	  			border-top: 3px solid $main-active-color;
+	  			height: 0;
+	  			display: block;
+	  			content:' ';
+	  			margin:15px auto 10px;
 				width:42px;
 			}
 		}
 		h5,p{
+			position:relative;
 			max-width: 243px;
 			margin-left:auto;
 			margin-right:auto;
@@ -375,7 +438,7 @@
 				   border-right: 1px solid #aaa;
 				    content: " ";
 				    float: left;
-				    height: 430px;
+				    height: 465px;
 					@media screen and (max-width: 1170px) {
 				    	height: 88%;
 					}
@@ -397,7 +460,6 @@
 		  		}
 	  		}
 	  	}
-    	margin-bottom: 80px;
 		@media screen and (max-width: 1170px) {
     		margin-bottom: 0;
 		}
