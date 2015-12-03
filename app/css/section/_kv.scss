@@ -5,7 +5,7 @@
   padding: 0;
   max-width:100%;
   top:0;
-  z-index: 11;
+  z-index: 21;
   @media screen and (max-width: 1170px) {
     display: none;
   }
@@ -127,4 +127,11 @@
   ul{
     margin-bottom:0;
   }
+}
+
+#kv ~ header{
+  margin-top:602px;
+}
+#kv ~ header .fit .logo{
+  opacity: 0;
 }
