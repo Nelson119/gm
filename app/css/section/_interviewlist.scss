@@ -39,77 +39,15 @@
     		margin:1.8em 0 0;
     	}
     }
-    .side{
-		margin-top:20px;
-    	text-align:right;
-    	>div{
-    		text-align:left;
-    		width:290px;
-    		display: inline-block;
-    		margin-bottom:20px;
-    		img{
-    			width:100%;
-    		}
-    		&.box{
-    			text-align:center;
-    			border:1px solid #8e9092;
-    			font-size: percentage(18/14);
-    			max-height: 90px;
-    			&:before{
-    				display: inline-block;
-    				height:95px;
-    				content:'';
-    				vertical-align: middle;
-    			}
-    		}
-    		&.popular{
-    			margin-bottom:15px;
-    			li{
-    				display: block;
-    				width:100%;
-    				border-bottom:1px solid #d3d3d3;
-    				padding:15px 0;
-    				a{
-    					display: block;
-    					color:#000;
-    					letter-spacing: -1em;
-    				}
-					aside{
-						display: inline-block;
-						letter-spacing: 1px;
-						&:nth-child(1){
-							padding-right:0;
-							img{
-								width:87px;
-							}
-						}
-					}
-					strong{
-						font-size: percentage(15/14);
-					}
-					span{
-						font-size: percentage(13/14);
-					}
-    				ol{
-    					li{
-    						display: inline;
-    						border:1px solid #8e9092;
-    						padding:3px 5px;
-    						font-size: percentage(10/14);
-    					}
-    				}
-    			}
-    		}
-    	}
-    }
 
     .author{
     	aside:nth-child(1){
-    		width:186px;
     		border-right:1px solid #ababab;
+            img{
+                width: 100%;
+            }
     	}
     	aside:nth-child(2){
-    		width:465px;
     		h4{
     			margin:0;
     			&:after{
@@ -122,5 +60,30 @@
     			}
     		}
     	}
+    }
+    
+    .recommended{
+        h5{
+            font-weight: 300;
+            text-align: center;
+            margin:25px 0;
+            line-height: 1em;
+            min-height: auto;
+            height: auto;
+            color:#434343;
+            &:before{
+                display: none;
+            } 
+        }
+        li{
+            display: inline-block;
+            position:relative;
+            a{
+                display: block;
+                img{
+                    width:100%;
+                }
+            }
+        }
     }
 }

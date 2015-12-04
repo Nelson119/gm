@@ -87,11 +87,12 @@ $(function(){
 			});
 
 			$('ul:eq(0)', header).superfish();
+			
+			var menu = $('>.fit', header);
 
 			if($('#kv').length){
 
 				var kv = $('#kv');
-				var menu = $('>.fit', header);
 				var logo = $('.logo', header);
 				var tlheader = new TimelineMax({paused: true, onStart: function(){
 					var scrollTop = $(window).scrollTop();
@@ -238,10 +239,11 @@ $(function(){
 		}).trigger('resize');
 	}
 
+	// search result
 	if($('input[name=search-term]').length){
 		$('input[name=search-term]').keyup(function (e) {
 		    if (e.keyCode === 13) {
-		        location.href = '/?s=' + this.value;
+		        location.href = 'search.html?s=' + this.value;
 		    }
 		});
 

@@ -1,0 +1,47 @@
+.page.search{
+    ul{
+        margin-top:30px;
+    }
+    li{
+        display: inline-block;
+        h4{
+            font-size: percentage(13/14);
+            text-align: left;
+            margin: 0 0 5px;
+            color:#000;
+            &:before{
+                width:20px;
+                height:3px;
+                content:' ';
+                display: block;
+                background-color: $main-active-color;
+                position:relative;
+                margin:0 0 10px;
+                z-index: 0;
+                top:0;
+            }
+        }
+        span{
+            font-size:percentage(12/14);
+            color:#53565a;
+        }
+        .view-count{
+            height:14px;
+        }
+        p{
+            font-size:percentage(12/14);
+            color:#53565a;
+            margin-top:20px;
+        }
+        &+li{
+            margin-top:15px;
+        }
+    }
+
+    .pagination{
+        margin-top:0;
+        ul{
+            margin-top:0;
+        }
+    }
+}

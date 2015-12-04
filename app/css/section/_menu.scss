@@ -59,7 +59,10 @@ body{
   overflow: hidden;
   min-width: 320px;
   display: none;
-  height: auto;
+  height: 40px;
+  @media  (min-width: 768px) and (max-width: 1170px) {
+    height: 96px;
+  }
   @media  screen and (max-width: 1170px) {
     display: block;
   }

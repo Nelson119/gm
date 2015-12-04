@@ -501,58 +501,58 @@
 		}
 
     }
-/////////////////////////////
-//button-4 
-///////////////////////////
-  .btn-shine {
-    font-size:percentage(11/14);
-    color:#6b6b6b;
-    border:1px solid #919395;
-    margin-top:10px;
-    padding:15px 20px;
-    position:relative;
-    overflow: hidden;
-    display: inline-block;
+	/////////////////////////////
+	//button-4 
+	///////////////////////////
+	.btn-shine {
+	    font-size:percentage(11/14);
+	    color:#6b6b6b;
+	    border:1px solid #919395;
+	    margin-top:10px;
+	    padding:15px 20px;
+	    position:relative;
+	    overflow: hidden;
+	    display: inline-block;
 
-    @media screen and (max-width: 1170px) {
-      padding:12px;
-    }
+	    @media screen and (max-width: 1170px) {
+	      padding:12px;
+	    }
     
-    span {
-      z-index: 20;
-      position:relative;
-    }
+	    span {
+	      z-index: 20;
+	      position:relative;
+	    }
     
-    &:after {
-		background: rgba(255,255,255,0.2);
-		content: "";
-		height: 155px;
-		left: -75px;
-		position: absolute;
-		top: -50px;
-		transform: rotate(35deg);
-		transition: left 550ms ease-out 0.5s,
-			opacity 0s ease-in 1.5s,
-			background 0s ease-in 1.5s;
-		width: 50px;
-		z-index: 0;
-    }
-  }
+		&:after {
+			background: rgba(255,255,255,0.2);
+			content: "";
+			height: 155px;
+			left: -75px;
+			position: absolute;
+			top: -50px;
+			transform: rotate(35deg);
+			transition: left 550ms ease-out 0.5s,
+				opacity 0s ease-in 1.5s,
+				background 0s ease-in 1.5s;
+			width: 50px;
+			z-index: 0;
+		}
+	}
 
-  .btn-shine:hover {
-    background:$main-active-color;
-    color:#fff;
-    border-color:$main-active-color;
-  	transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1) ;
-    &:after {
-    	left: 120%;
-    	background:$main-active-color;
-    	opacity: 0.2;
-    	transition: left 750ms cubic-bezier(0.19, 1, 0.22, 1) 0.25s,
-    		opacity 1s ease-in .9s,
-    		background 1s ease-in .9s;
-    }
-  }
+	.btn-shine:hover {
+	    background:$main-active-color;
+	    color:#fff;
+	    border-color:$main-active-color;
+	  	transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1) ;
+	    &:after {
+			left: 120%;
+			background:$main-active-color;
+			opacity: 0.2;
+			transition: left 750ms cubic-bezier(0.19, 1, 0.22, 1) 0.25s,
+			opacity 1s ease-in .9s,
+			background 1s ease-in .9s;
+		}
+	}
 
 
 	.pagination{
@@ -578,7 +578,7 @@
 			color:#aaa;
 			font-size:percentage(12/14);
 			font-family:'Calibri';
-			content:'Tags :';
+			content: 'Tags :';
 			display: inline-block;
 			height:40px;
 			line-height:40px;
@@ -598,4 +598,93 @@
 			}
 		}
 	}
+    .side{
+		margin-top:20px;
+    	text-align:right;
+        @media  screen and (max-width: 1170px) {
+            display: none;
+        }
+    	
+    	>div{
+    		text-align:left;
+    		width:290px;
+    		display: inline-block;
+    		margin-bottom:20px;
+    		img{
+    			width:100%;
+    		}
+    		&.box{
+    			text-align:center;
+    			border:1px solid #8e9092;
+    			font-size: percentage(18/14);
+    			max-height: 90px;
+    			&:before{
+    				display: inline-block;
+    				height:95px;
+    				content:'';
+    				vertical-align: middle;
+    			}
+    		}
+    		&.popular{
+    			margin-bottom:15px;
+    			li{
+    				display: block;
+    				width:100%;
+    				border-bottom:1px solid #d3d3d3;
+    				padding:15px 0;
+    				a{
+    					display: block;
+    					color:#000;
+    					letter-spacing: -1em;
+    				}
+					aside{
+						display: inline-block;
+						letter-spacing: 1px;
+						&:nth-child(1){
+							padding-right:0;
+							img{
+								width:87px;
+							}
+						}
+					}
+					strong{
+						font-size: percentage(15/14);
+					}
+					span{
+						font-size: percentage(13/14);
+					}
+    				ol{
+    					li{
+    						display: inline;
+    						border:1px solid #8e9092;
+    						padding:3px 5px;
+    						font-size: percentage(10/14);
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+
+    .fb-comments{
+    	iframe{
+    		border-top:1px solid #aaa;
+    	}
+    }
+    &.report-list{
+    	
+	    h3{
+	      b{
+	        background-image:url(../img/common/reports.svg);
+	      }
+	    }
+    }
+    &.customs-list{
+    	
+	    h3{
+	      b{
+	        background-image:url(../img/common/customs.svg);
+	      }
+	    }
+    }
 }
