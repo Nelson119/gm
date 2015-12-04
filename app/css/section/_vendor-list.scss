@@ -1,0 +1,23 @@
+.page.vendor-list{
+    .tagline{
+        font-family: 'microsoft jhenghei';
+        letter-spacing: 0.5em;
+        img{
+            height:14px;
+            display: inline-block;
+            margin-top: -5px;
+        }
+    }
+    ul{
+        text-align:left;
+    }
+    .sm-three-col li:hover{
+        border-color:inherit;
+        h5{
+            &:after{
+                transform: rotateZ(-18deg);
+                transition:.5s;
+            }
+        }
+    }
+}

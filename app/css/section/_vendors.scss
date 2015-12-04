@@ -1,0 +1,136 @@
+.page.vendors{
+    #gallery{
+        border:1px solid #aaa;
+        padding:25px;
+    }
+    .slides{
+        display: inline;
+    }
+    .slide-thumb{
+        padding:0;
+    }
+    ol{
+        margin:0;
+        position: relative;
+        margin-left:-5px;
+        margin-right:-5px;
+        overflow: hidden;
+        li{
+            padding:5px;
+        }
+    }
+    li{
+        img{
+            max-width: 100%;
+        }
+    }
+    .slick-prev{
+        left:0;
+        background:url(../img/kv/arrow-prev.png) no-repeat center center / auto 100%;
+    }
+    .slick-next{
+        right:0;
+        background:url(../img/kv/arrow-next.png) no-repeat center center / auto 100%;
+    }
+    .slick-arrow{
+        position:absolute;
+        width:25px;
+        height:30px;
+        z-index: 1;
+        top:50%;
+        margin-top:-15px;
+        &:hover{
+          filter:invert(0.15);
+        }
+        &:before{
+          display: none;
+        }
+    }
+    .main-content{
+        h3{
+            float: left;
+            width:100%;
+            color:#313131;
+            font-size: percentage(18/14);
+            text-align:left;
+            font-family: 'text';
+            margin-top:10px;
+            margin-bottom:20px;
+        }
+        .category{
+            color:#535353;
+            margin-top:30px;
+            float: left;
+            width:100%;
+            &:hover{
+                color:#535353!important;
+            }
+        }
+        article{
+            max-width:662px;
+            p{
+                font-size: percentage(15/14);
+                margin-top:30px;
+                &.margintop10{
+                    margin-top:10px;
+                }
+            }
+            hr{
+                margin-bottom:0;   
+            }
+            iframe{
+                border-top:1px solid #aaa;
+            }
+            .comments {
+                margin:0 -8px;
+            }
+        }
+        .side{
+            margin:0;
+            hr{
+                border-color:#000;
+                opacity:.44;
+            }
+            .vendor-about{
+                .tagline{
+                    width:100%;
+                    text-align:center;
+                    display:block;
+                    &:after{
+                        margin:20px auto;
+                        width:40px;
+                        height:3px;
+                        background-color:$main-active-color;
+                        content:' ';
+                        display: block;
+                    }
+                }
+                .logo{
+                    width:auto;
+                    display:block;
+                    margin:0 auto;
+                }
+                .detail{
+                    margin-bottom:5px;
+                }
+                a{
+                    font-family: 'text';
+                }
+            }
+            .box{
+                padding:14px 0 20px;
+                height:auto;
+                img{
+                    width:auto;
+                }
+                p{
+                    font-size: percentage(12.5/18);
+                    color:#535353;
+                    font-family:'text';
+                    text-align:left;
+                }
+
+            }
+        }
+    }
+}

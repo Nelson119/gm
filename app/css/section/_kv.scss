@@ -131,6 +131,9 @@
 
 #kv ~ header{
   margin-top:602px;
+  @media screen and (max-width: 1170px) {
+    margin-top:0;
+  }
 }
 #kv ~ header .fit .logo{
   opacity: 0;

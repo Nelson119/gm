@@ -13,6 +13,9 @@
 	}
     .sm-three-col{
         margin-top:40px;
+        h5{
+            text-align: center;
+        }
     }
     .pre{
     	margin-bottom:20px;
@@ -85,5 +88,11 @@
                 }
             }
         }
+    }
+    hr{
+        margin-bottom:0;
+    }
+    .comments {
+        margin:0 -8px;
     }
 }

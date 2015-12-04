@@ -52,18 +52,18 @@
         <aside>
           <nav id="menu">
             <ul>
-              <li><a href="javascript:">home</a></li>
-              <li><a href="interview-list.html">INTERVIEW</a>
+              <li><a href="./" title="回首頁">home</a></li>
+              <li class="active"><a href="javascript:" title="人物專訪">INTERVIEW</a>
                 <div>
                   <ol>
-                    <li><a href="interview-list.html">婚禮專家</a></li>
+                    <li class="active"><a href="interview-list.html">婚禮專家</a></li>
                     <li><a href="interview-list.html">紅毯直擊</a></li>
                     <li><a href="interview-list.html">愛&amp;生活</a></li>
                   </ol>
                 </div>
               </li>
-              <li><a href="customs-list.html">CUSTOMs</a></li>
-              <li><a href="report-list.html">report</a>
+              <li><a href="customs-list.html" title="禮俗教室">CUSTOMs</a></li>
+              <li><a href="javascript:" title="專題報導">report</a>
                 <div>
                   <ol>
                     <li><a href="report-list.html">婚宴會場</a></li>
@@ -86,7 +86,7 @@
                   </ol>
                 </div>
               </li>
-              <li><a href="creativity-list.html">cREATIVITY</a>
+              <li><a href="javascript:" title="婚禮創意">cREATIVITY</a>
                 <div>
                   <ol>
                     <li><a href="creativity-list.html">提親</a></li>
@@ -96,7 +96,7 @@
                   </ol>
                 </div>
               </li>
-              <li><a href="vendor-list.html">VENDORS</a>
+              <li><a href="javascript:" title="廠商資訊">VENDORS</a>
                 <div>
                   <ol>
                     <li><a href="vendor-list.html">禮服</a></li>
@@ -122,8 +122,8 @@
                   </ol>
                 </div>
               </li>
-              <li><a href="event-list.html">EVENT</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
+              <li><a href="event-list.html" title="EVENT">EVENT</a></li>
+              <li><a href="contact.html" title="我要諮詢">CONTACT</a></li>
             </ul>
             <ul class="social">
               <li><a target="_blank" href="http://instagram.com"><img src="img/common/ig.svg"></a></li>
@@ -142,133 +142,58 @@
         </aside>
       </section>
     </header>
-    <section class="page report-list">
+    <section class="page contact">
       <div class="container">
         <div class="col-lg-12"><ul class="breadcrumbs col-lg-12">
           <li><a href="javascript:">HOME</a></li>
-          <li><a href="javascript:">專題報導</a></li>
+          <li><a href="javascript:">人物專訪</a></li>
+          <li><a href="javascript:">婚禮專家</a></li>
         </ul></div>
         <section class="row">
           <section class="col-lg-12">
-            <div class="col-lg-12"><h2>REPORT</h2></div>
-            <section class="highlight col-lg-12">
-              <section class="row">
-                <aside class="col-lg-8 visual">
-                  <img src="img/articles/customs.png">
-                </aside>
-                <aside class="col-lg-4 text-content">
-                  <a class="category col-lg-6" href="javascript:">結婚禮俗</a>
-                  <i class="fa view-counter text-right col-lg-6"><img class="eye" src="img/common/eye.svg">4063</i>
-                  <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給他了!</h5>
-                  <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在春在春夏的超大膽系...</p>
+            
+            <section class="col-lg-12 pre">
+              <h2><img src="img/common/contact.svg" alt="contact"></h2>
+            </section>
 
-                </aside>
-              </section>
-              <aside class="row">
-                <section class="btn-container col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                <a href="javascript:" class="btn-shine"><span>VIEW MORE &gt;</span></a>
+            <section class="col-lg-12">
+              <p>請留下想要諮詢的訊息，我們將會盡快回復您！請留下想要諮詢的訊息，我們將會盡快回復您！請留下想要諮詢的訊息，我們將會盡快回復您！請留下想要諮詢的訊息，我們將會盡快回復您！請留下想要諮詢的訊息，我們將會盡快回復您！</p>
+              <form class="row">
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="userName">Name / 姓名 </label>
+                  <input class="form-control col-lg-12" name="userName">
                 </section>
-              </aside>
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="email">Email / 信箱 </label>
+                  <input class="form-control col-lg-12" name="email">
+                </section>
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="phone">Phone / 聯絡電話 </label>
+                  <input class="form-control col-lg-12" name="phone">
+                </section>
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="subject">Subject / 主題 </label>
+                  <select class="form-control col-lg-12" name="subject">
+                    <option>廠商諮詢</option>
+                  </select>
+                </section>
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="attachment">Attachment / 上傳圖片 </label>
+                  <input type="file" class="file" data-show-upload="false" data-show-preview="false" data-show-caption="true">
+                </section>
+                <section class="form-group col-lg-12">
+                  <label class="control-label" for="message">Message / 訊息 </label>
+                  <textarea class="form-control col-lg-12" rows="5" cols="50" name="message"></textarea>
+                </section>
+                <section class="form-group col-lg-12 text-right">
+                  <button class="btn-shine">send message</button>
+                </section>
+              </form>
             </section>
-            <hr>
-            <section class="two-col col-lg-12">
-              <ul class="row">
-                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <a class="category col-lg-6" href="javascript:">結婚禮俗</a>
-                  <i class="fa view-counter text-right col-lg-6"><img class="eye" src="img/common/eye.svg">4063</i>
-                  <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/2-col-thumb.png"></a>
-                  <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給他了!</h5>
-                  <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在春在春夏的超大膽系...</p>
-                </li>
-                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <a class="category col-lg-6" href="javascript:">結婚禮俗</a>
-                  <i class="fa view-counter text-right col-lg-6"><img class="eye" src="img/common/eye.svg">4063</i>
-                  <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/2-col-thumb.png"></a>
-                  <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給他了!</h5>
-                  <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在春在春夏的超大膽系...</p>
-
-                </li>
-              </ul>
-              <aside class="row">
-                <section class="btn-container col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                <a href="javascript:" class="btn-shine"><span>VIEW MORE &gt;</span></a>
-                </section>
-              </aside>
-            </section>
-            <hr>
-            <section class="three-col col-lg-12">
-              <section class="row">
-                <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <ul class="row">
-                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                      <a class="category col-lg-6 col-md-6 col-sm-6 col-xs-6" href="javascript:">婚禮音樂</a>
-                      <i class="fa view-counter col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><img class="eye" src="img/common/eye.svg">4063</i>
-                      <aside>
-                        <a class="thumb col-lg-12" href="javascript:"><img src="img/articles/thumb-1.png"></a>
-                        <h5 class="col-lg-12">誰能突破Galia Lahav的性感？就交給Galia Lahav秋冬高..</h5>
-                        <p class="col-lg-12">每次都帶給人耳目一新的設計感的婚紗女王又出招啦還記得她在春夏的超大膽系列嗎？秋冬系列還記得她在2016春夏...</p>
-                      </aside>
-                    </li>
-                  </ul>
-                </section>
-                
-              </section>
-              <aside class="row">
-                <section class="btn-container col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                <a href="javascript:" class="btn-shine"><span>VIEW MORE &gt;</span></a>
-                </section>
-              </aside>
-            </section>
-          </section>
+          </section>  
         </section>
       </div>
       
-      <a class="fade gotop" href="javascript:"><i class="fa fa-chevron-up"></i></a>
     </section>
     <div class="footer">
       <section class="container">
@@ -300,6 +225,14 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=489266664463439";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->

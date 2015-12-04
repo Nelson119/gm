@@ -117,12 +117,27 @@ body{
         color:#fff;
       }
     }
+    @media  sceen and (min-width: 1170px) {
+      display: none;
+    }
+  }
+  &.onsearch{
+    @media  sceen and (min-width: 1170px) {
+      display: none;
+    }
+    position:fixed;
+    top:0;left:0;
+    height:100%;
+    width:100%;
     .search_form{
-      bottom: -80px;
+      bottom: 50%;
       display: block;
       left: 50%;
       margin-left: -140px;
       position: absolute;
+    }
+    ul{
+      display: none;
     }
   }
   @media screen and (max-width: 1170px) {
@@ -420,7 +435,7 @@ header {
     }
   }
   #menu{
-    width:980px;
+    width:988px;
     margin:0 auto;
     max-height: 78px;
     z-index: 1;
@@ -450,6 +465,7 @@ header {
               margin:23px auto 10px!important;
               transition-duration: 0.55s!important;
               transition-property: margin opacity!important;
+              font-family: text;
             }
           }
         }
@@ -460,6 +476,19 @@ header {
           a,a:active,a:focus{
             color:inherit;
             transition-duration: 0.55s;
+            color:rgba(0,0,0,0);
+            position:relative;
+            &:after{
+              content:attr(title);
+              display: block;
+              position:absolute;
+              width:100%;
+              height:100%;
+              color:#000;
+              top:0;
+              left:0;
+              font-family:'microsoft jhenghei';
+            }
           }
         }
 
@@ -478,7 +507,7 @@ header {
         }
       }
       &.social{
-        margin-left: 20px;
+        margin-left: 10px;
         display: inline;
         letter-spacing: 0;
         li{
@@ -490,9 +519,13 @@ header {
             padding: 0 10px;
             img{
               width:18px;
+              height:18px;
             }
           }
           &.search{
+            a{
+              padding-right:10px;
+            }
             div{
               .center{
                 width:980px;
@@ -543,14 +576,14 @@ header {
         transition-duration: 0.25s;
         a{
           background:none;
-          color:inherit;
+          color:#000 !important;
           border-right:1px solid #959595;
           line-height:14px;
           vertical-align: top;
           padding-bottom:2px;
           &:hover,&:active,&:focus{
             background:none;
-            color:$main-active-color;
+            color:$main-active-color !important;
           }
         }
         li:first-child{
