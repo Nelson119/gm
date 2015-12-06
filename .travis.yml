@@ -5,6 +5,8 @@ env:
 node_js:
 - '0.10'
 install:
+- travis_retry bundle install
+- travis_wait mvn install
 - npm install jshint mocha gulp bower -g 
 - npm install
 - bower install

@@ -433,6 +433,8 @@
 		ul{
 			letter-spacing: 0;
 			line-height: 40px;
+			padding-left:7px;
+			margin-top:15px;
 			@media screen and (max-width: 1170px) {
 				line-height: 0;
 				padding-bottom:20px;
@@ -807,6 +809,12 @@
 		ul{
 			display: inline-block;
 		}
+		@media  screen and (max-width: 1170px) {
+			display: block;
+			ul{
+				display:none;
+			}
+		}
 	}
 	.tags{
 		padding:0;
@@ -917,6 +925,20 @@
 	        background-image:url(../img/common/reports.svg);
 	      }
 	    }
+	    .pagination{
+	    	margin-top:5px;
+	    }
+    }
+    .interview-list{
+	    h3{
+	      b{
+	        background-image:url(../img/common/interview.svg);
+	      }
+	    }
+	    .pagination{
+	    	margin-top:5px;
+	    }
+
     }
     &.customs-list{
     	

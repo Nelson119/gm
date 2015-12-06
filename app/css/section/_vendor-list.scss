@@ -11,11 +11,27 @@
     ul{
         text-align:left;
     }
+    @media screen and (max-width: 768px) {
+        .sm-three-col {
+            li{
+                width:95%;
+                &+li{
+                    margin-top:20px;
+                }
+            }
+        }
+    }
+    .sm-three-col{
+
+        li{
+            padding: 20px 35px 25px;
+        }
+    }
     .sm-three-col li:hover{
         border-color:inherit;
         h5{
             &:after{
-                transform: rotateZ(-18deg);
+                transform: rotateZ(-35deg);
                 transition:.5s;
             }
         }
