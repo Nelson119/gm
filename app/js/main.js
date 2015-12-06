@@ -154,6 +154,41 @@ $(function(){
 				});
 			}else{
 				menu.addClass('fixed');
+				$(window).on('scroll resize', function(){
+					var o = this;
+					var scrollTop = $(window).scrollTop();
+					var distance = 140;
+					var target = 78 + 50;
+					var ratio = scrollTop / distance;
+					var dist = 60;
+					var logoDist = 50;
+
+					var h = 180 - target * ratio;
+					var mg = 51 - 50 * ratio;
+					var size = 60 - 10 * ratio;
+					if(h < 50){
+						$('header a.logo').height(50);
+						console.log($('header #logo'));
+					}else{
+						$('header a.logo').height(h);
+						$('header #logo').css('margin-top',mg);
+						$('header #logo').height(size);
+					}
+
+					if(mg < 1){
+						$('header #logo').css('margin-top',1);
+					}else{
+						$('header #logo').css('margin-top',mg);
+					}
+
+					if(size < 50){
+						$('header #logo').height(50);
+						console.log($('header #logo'));
+					}else{
+						$('header #logo').height(size);
+					}
+
+				}).trigger('scroll');
 			}
 
 		}($('header')));

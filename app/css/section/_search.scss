@@ -1,4 +1,8 @@
 .page.search{
+
+    @media  screen and (max-width: 1170px) {
+        font-size: 160%;
+    }
     ul{
         margin-top:30px;
     }
@@ -8,6 +12,9 @@
             font-size: percentage(13/14);
             text-align: left;
             margin: 0 0 5px;
+            @media  screen and (max-width: 1170px) {
+                margin: 0 0 2em;
+            }
             color:#000;
             &:before{
                 width:20px;
@@ -19,6 +26,9 @@
                 margin:0 0 10px;
                 z-index: 0;
                 top:0;
+                @media  screen and (max-width: 1170px) {
+                    margin: 0 0 1.5em;
+                }
             }
         }
         span{

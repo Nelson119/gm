@@ -334,8 +334,9 @@ body{
   }
 }
 header {
-  height:128px;
+  height:278px;
   margin-top:0;
+  background:#fff;
   @media screen and (max-width: 1170px) {
     height:auto;
   }
@@ -360,18 +361,19 @@ header {
     }
     a.logo{
       display: block;
-      height: 50px;
+      height: 200px;
       // opacity: 0;
+      // margin-top: 20px;
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
       background:rgba(255,255,255,0.8);
       transform-origin:bottom center 0;
       svg#logo{
-        margin-top:1px;
-        height: 100%;
+        margin-top:50px;
+        height: 60px;
         fill:#000;
-        transition-duration: 0.25s;
+        // transition-duration: 0.25s;
         // &:hover,&:focus,&:active{
         //   fill:$main-active-color;
         // }

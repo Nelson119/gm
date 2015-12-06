@@ -131,6 +131,15 @@
 
 #kv ~ header{
   margin-top:602px;
+    a.logo{
+      height: 50px;
+      &:before{
+        display: none;
+      }
+      #logo{
+        height: 50px;
+      }
+    }
   @media screen and (max-width: 1170px) {
     margin-top:0;
   }

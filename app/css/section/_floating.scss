@@ -4,10 +4,13 @@
   padding-top: 245px;
   // transition-timing-function:ease-out;
   // transition-duration:1.8s; 
+  right: -200px;
+  @media screen and (max-width: 1366px) {
+    right: -170px;
+  }
   @media screen and (max-width: 1170px) {
     display: none;
   }
-  right: -200px;
   a{
     display: block;
     width:186px;
