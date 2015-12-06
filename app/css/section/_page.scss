@@ -118,12 +118,14 @@
       }
     }
     .gotop{
-      position: absolute;
-      right:0;
-      padding:7px 12px 12px;
-      background:rgba(0,0,0,0.5);
-      color:#fff;
-      margin-top: -297px;
+        background:rgba(0,0,0,0.5);
+	    bottom: -45px;
+	    color: #fff;
+	    display: block;
+	    margin-top: -297px;
+	    padding: 7px 12px 12px;
+	    position: absolute;
+	    right: -100px;
       &:hover{
         background:rgba(0,0,0,0.8);
       }
@@ -132,6 +134,9 @@
       margin-top: 20px;
       margin-bottom: 20px;
       padding:0;
+		@media screen and (max-width: 1170px) {
+			display: none;
+		}
       li{
         font-family: text;
         a{
@@ -158,10 +163,32 @@
       border-top:1px solid rgba(0,0,0,.44);
       border-bottom:1px solid rgba(0,0,0,.44);
       padding:25px 0;
+      margin-top:0;
       font-size: percentage(32/14);
       img{
       	height:32px;
       }
+
+    	@media screen and (max-width: 1170px) {
+
+    		border:0;
+    		text-align: center;
+			position:relative;
+			z-index:1;
+    		&:before{
+    			z-index:-1;
+    			width:100%;
+    			border-top:1px solid rgba(0,0,0,.44);
+    			content:' ';
+    			position:absolute;
+    			top:50%;
+    			left:0;
+    		}
+    		img{
+    			height:25px;
+    			background:#fff;
+    		}
+      	}
     }
   	h5{
   		font-size:percentage(14/14);
@@ -220,6 +247,7 @@
   				transition-duration: 0.5s;
   				transform: scale(0.95) translateY(-400%);
   				width:101%;
+  				line-height:20em;
 		  		@media screen and (max-width: 1170px) {
 					line-height:26.5em;
 		  		}
@@ -378,7 +406,7 @@
 	  				opacity: 0;
 	  				transition-duration: 0.5s;
 	  				transform: scale(0.95) translateY(-400%);
-	  				line-height:14.5em;
+	  				line-height:20.5em;
 	  				width:101%;
 			  		@media screen and (max-width: 1170px) {
 						line-height:18.5em;
@@ -447,7 +475,7 @@
 		}
 		li{
 			letter-spacing: 1px;
-			border:1px solid #6b6b6b;
+			border:1px solid rgba(0,0,0,0.44);
 		    transition: border-color 0.5s ease-in-out 0s;
 			line-height: 1.2em;
 			overflow: hidden;
@@ -698,7 +726,7 @@
 		  				transition-duration: 0.5s;
 		  				transform: scale(0.95) translateY(-400%);
 		  				vertical-align: middle;
-		  				line-height:14.5em;
+		  				line-height:20em;
 		  				width:101%;
 		  			}
 		  			&:hover:before{
@@ -817,8 +845,41 @@
 		}
 		@media  screen and (max-width: 1170px) {
 			display: block;
-			ul{
+			height:25px;
+			width: 100%;
+			position:relative;
+			ul, >a{
 				display:none;
+			}
+			.prev{
+				display: inline-block;
+				position:absolute;
+				left:0;
+				top:0;
+				background: url(../img/common/prev.png) no-repeat left center;
+				&:after{
+					content:'PREV';
+					position:absolute;
+					left:150%;
+				}
+				img{
+					visibility: hidden;
+				}
+			}
+			.next{
+				display: inline-block;
+				position:absolute;
+				right:0;
+				top:0;
+				background: url(../img/common/next.png) no-repeat left center;
+				&:before{
+					content:'NEXT';
+					position:absolute;
+					right:150%;
+				}
+				img{
+					visibility: hidden;
+				}
 			}
 		}
 	}
@@ -955,6 +1016,9 @@
 	    }
     }
     &.contact{
+    	p{
+    		margin:40px 0 30px;
+    	}
     	.control-label{
     		font-size: percentage(16/14);
     		font-family: 'Times New Roman', 'text';
@@ -966,29 +1030,26 @@
     		color:#a0a0a0;
     		border-radius:0;
     		background:#fafafa;
+			border-color:#e4e4e4;
+    		height:45px;
     		&:focus{
     			box-shadow:none;
-    			border-color:#ccc;
+    			border-color:#e4e4e4;
     		}
+    	}
+    	.form-group{
+    		margin-bottom:25px;
     	}
     	input,select,textarea{
     		background:#f9f9f9;
     		border-radius:0;
     		resize: none;
     	}
-    	.fileinput-remove-button{
-    		padding-right:0;
-    		i{
-    			color:#a0a0a0;
-    		}
-    		span{
-    			font-size: 0;
-    			text-indent:-9999em;
-    		}
-    	}
-    	.btn.btn-primary.btn-file{
-    		width:28px;
-    		padding-right:0;
+    	.fileinput-remove-button,.btn.btn-primary.btn-file{
+    		height:45px;
+		    @media screen and (min-width: 768px) {
+		      padding-right:0;
+		    }
     		.glyphicon-folder-open{
     			color:#a0a0a0;
     		}
@@ -998,11 +1059,14 @@
     		}
     		background: #f9f9f9;
     		border-radius:0;
-    		border-color: #ccc;
+    		border-color: #e4e4e4;
     		opacity: 0.6;
     		&:hover,&:focus,&:active{
     			opacity: inherit;
     		}
+    	}
+    	textarea.form-control{
+    		height: 335px;
     	}
     }
 }

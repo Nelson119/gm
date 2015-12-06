@@ -15,7 +15,8 @@
     "jQuery.mmenu": "~5.5.3",
     "within-viewport": "~1.0.0",
     "bootstrap-fileinput": "~4.2.8",
-    "flexslider": "~2.6.0"
+    "flexslider": "~2.6.0",
+    "lightgallery": "~1.2.7"
   },
   "overrides": {
     "bootstrap-sass": {

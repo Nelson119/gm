@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/bower_components/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css" />
     <link rel="stylesheet" href="/bower_components/bootstrap-fileinput/css/fileinput.min.css" />
     <link rel="stylesheet" href="/bower_components/flexslider/flexslider.css" />
+    <link rel="stylesheet" href="/bower_components/lightgallery/dist/css/lightgallery.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -160,8 +161,8 @@
         </ul></div>
         <div class="col-lg-12">
           <section class="row">
+            <div class="col-lg-12"><h2><img src="img/common/vendor.svg"></h2></div>
             <section class="col-lg-12">
-              <h2>VENDORS</h2>
               <span class="category">拍婚紗</span>
               <h3>White手工婚紗</h3>
             </section>
@@ -169,6 +170,7 @@
           <section class="row">
             <article class="col-lg-9">
               <section id="gallery">
+                <a class="zoom" href="javascript:"><img src="img/common/zoom.png"></a>
                 <ul class="slides">
                   <li><figure><img src="img/vendors/gallery-image.png"></figure></li>
                   <li><figure><img src="img/vendors/gallery-image.png"></figure></li>
@@ -253,6 +255,15 @@
           </section>
         </div>
       </div>
+        
+      <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+          <div class="slides"></div>
+          <h3 class="title"></h3>
+          <a class="prev icon-left-open-big"></a>
+          <a class="next icon-right-open-big"></a>
+          <a class="close"><i class="icon-right-open-big"></i><i class="icon-left-open-big"></i></a>
+          <ol class="indicator"></ol>
+      </div>
     </section>
     <div class="footer">
       <section class="container">
@@ -314,6 +325,7 @@
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/bower_components/bootstrap-fileinput/js/fileinput.min.js"></script>
     <script src="/bower_components/flexslider/jquery.flexslider.js"></script>
+    <script src="/bower_components/lightgallery/dist/js/lightgallery.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

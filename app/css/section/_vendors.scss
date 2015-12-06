@@ -2,12 +2,18 @@
     #gallery{
         border:1px solid #aaa;
         padding:25px;
+        position:relative;
     }
     .slides{
         display: inline;
     }
     .slide-thumb{
         padding:0;
+    }
+    h3{
+        &:before{
+            display: none;
+        }
     }
     ol{
         margin:0;
@@ -17,6 +23,7 @@
         overflow: hidden;
         li{
             padding:5px;
+            cursor: pointer;
         }
     }
     li{
@@ -132,5 +139,13 @@
 
             }
         }
+    }
+
+    .zoom{
+        position:absolute;
+        right:35px;
+        top:35px;
+        z-index: 1;
+        
     }
 }

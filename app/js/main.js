@@ -157,9 +157,9 @@ $(function(){
 				$(window).on('scroll resize', function(){
 					var o = this;
 					var scrollTop = $(window).scrollTop();
-					var distance = 140;
+					var distance1 = 140;
 					var target = 78 + 50;
-					var ratio = scrollTop / distance;
+					var ratio = scrollTop / distance1;
 					var dist = 60;
 					var logoDist = 50;
 
@@ -171,14 +171,14 @@ $(function(){
 						console.log($('header #logo'));
 					}else{
 						$('header a.logo').height(h);
-						$('header #logo').css('margin-top',mg);
+						$('header #logo').css('margin-top', mg);
 						$('header #logo').height(size);
 					}
 
 					if(mg < 1){
-						$('header #logo').css('margin-top',1);
+						$('header #logo').css('margin-top', 1);
 					}else{
-						$('header #logo').css('margin-top',mg);
+						$('header #logo').css('margin-top', mg);
 					}
 
 					if(size < 50){
@@ -266,15 +266,15 @@ $(function(){
 			$('.gotop').unbind('click');
 			$('.gotop').bind('click', function(){
 				var tl = new TimelineMax();
-				tl.add(
-					TweenMax.to('html', 0.1, {
-						opacity: 0.15
-					})
-				);
+				// tl.add(
+				// 	TweenMax.to('html', 0.1, {
+				// 		opacity: 0.15
+				// 	})
+				// );
 
-				tl.set('html,body', {
-					scrollTop: 690
-				});
+				// tl.set('html,body', {
+				// 	scrollTop: 690
+				// });
 
 				tl.add([
 					TweenMax.to('html', 0.6, {
@@ -314,7 +314,25 @@ $(function(){
 			slidesToScroll: 1,
 			arrows: true,
 			asNavFor: '.page.vendors #gallery .slides',
-			focusOnSelect: true
+			focusOnSelect: true,
+			centerMode: true
+		});
+	}
+	if($('.page.vendors').length){
+
+		$('#gallery .zoom').on('click', function(){
+			var data = [];
+			$('#gallery ul li').each(function(){
+				data.push({
+					src: $('figure img', this).attr('src'),
+					type: 'image/jpeg',
+					thumb: $('figure img', this).attr('src')
+				});
+			});
+			$(this).lightGallery({
+				dynamic: true,
+				dynamicEl: data
+			});
 		});
 	}
 });
