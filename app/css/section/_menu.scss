@@ -466,6 +466,7 @@ header {
               transition-duration: 0.55s!important;
               transition-property: margin opacity!important;
               font-family: text;
+              font-weight: normal;
             }
           }
         }
@@ -480,6 +481,7 @@ header {
             position:relative;
             &:after{
               content:attr(title);
+              font-weight: bold;
               display: block;
               position:absolute;
               width:100%;
@@ -487,13 +489,13 @@ header {
               color:#000;
               top:0;
               left:0;
-              line-height: 75px;
+              line-height: 80px;
               font-family:'microsoft jhenghei';
             }
           }
         }
 
-        &.off,&.no-child{
+        &.off{
           background:#000;
           a{
             color: #fff;
@@ -632,7 +634,7 @@ header {
     &.mm-opened{
       z-index: 1;
     }
-    &:hover +.marquee:after{
+    &:hover ~.overlay:after{
       display: block;
       opacity: 1;
       height:100%;
@@ -720,6 +722,9 @@ header {
     a{
       color:#e74b8c;
     }
+  }
+  .overlay{
+    position:relative;
     &:after{
       transition: opacity .5s linear 0s, height 0s linear 0.5s;
       opacity: 0;

@@ -1,14 +1,30 @@
 .page.vendors{
+    h2{
+        margin-bottom: 0;
+    }
     #gallery{
         border:1px solid #aaa;
         padding:25px;
         position:relative;
+        @media screen and (max-width: 1170px) {
+            padding:0;
+        }
     }
     .slides{
         display: inline;
     }
     .slide-thumb{
         padding:0;
+    }
+    @media screen and (max-width: 1170px) {
+        .main-content{
+            h3{
+                margin:0;
+            }
+            span.category{
+                margin:0;
+            }
+        }
     }
     h3{
         &:before{
@@ -20,6 +36,9 @@
         position: relative;
         margin-left:-5px;
         margin-right:-5px;
+        @media screen and (max-width: 1170px) {
+            margin:0;
+        }
         overflow: hidden;
         li{
             padding:5px;
@@ -146,6 +165,13 @@
         right:35px;
         top:35px;
         z-index: 1;
-        
+        @media screen and (max-width: 1170px) {
+            right:5%;
+            top:5%;
+        }
+    }
+
+    .side{
+        display: block;
     }
 }

@@ -76,9 +76,11 @@ $(function(){
 				if($('.mmenu-head').hasClass('on')){
 					$('.mmenu-head').removeClass('on');
 					$('body').removeClass('menuon');
+					$('.mmenu-head li').removeClass('on');
 				}else if($('.mmenu-head').hasClass('onsearch')){
 					$('.mmenu-head').removeClass('onsearch');
 					$('body').removeClass('menuon');
+					$('.mmenu-head li').removeClass('on');
 				}else{
 					TweenMax.set('html,body', {scrollTop: 0});
 					$('.mmenu-head').addClass('on');
@@ -168,7 +170,6 @@ $(function(){
 					var size = 60 - 10 * ratio;
 					if(h < 50){
 						$('header a.logo').height(50);
-						console.log($('header #logo'));
 					}else{
 						$('header a.logo').height(h);
 						$('header #logo').css('margin-top', mg);
@@ -183,7 +184,6 @@ $(function(){
 
 					if(size < 50){
 						$('header #logo').height(50);
-						console.log($('header #logo'));
 					}else{
 						$('header #logo').height(size);
 					}
@@ -227,7 +227,7 @@ $(function(){
 	//floating layer
 	if($('.floating-banner').length){
 		(function(floating){
-			floating.stickyfloat({duration: 1000, delay: 0, stickToBottom: false, offsetY: 0, startOffset: 784, cssTransition: true});
+			floating.stickyfloat({duration: 750, delay: 0, stickToBottom: false, offsetY: 0, startOffset: 784, cssTransition: true});
 		}($('.floating-banner')));
 	}
 
