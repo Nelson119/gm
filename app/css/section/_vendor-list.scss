@@ -2,14 +2,13 @@
     .tagline{
         font-family: 'microsoft jhenghei';
         letter-spacing: 0.5em;
+        padding-top: 20px;
+        display: block;
         img{
             height:14px;
             display: inline-block;
             margin-top: -5px;
         }
-    }
-    ul{
-        text-align:left;
     }
     @media screen and (max-width: 768px) {
         .sm-three-col {
@@ -19,9 +18,16 @@
                     margin-top:20px;
                 }
             }
+            ul{
+                // margin-bottom:10px;
+            }
         }
     }
     .sm-three-col{
+        ul{
+            margin-top:0;
+            text-align:left;
+        }
 
         li{
             padding: 20px 35px 25px;

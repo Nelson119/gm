@@ -15,7 +15,10 @@
         border:0;
     }
     .sm-three-col{
-        margin-top:40px;
+        // margin-top:40px;
+        ul{
+            margin-top:0;
+        }
         h5{
             text-align: center;
         }
@@ -165,5 +168,8 @@
     }
     .comments {
         margin:0 -8px;
+    }
+    .fb-like{
+        margin-top:20px;
     }
 }
