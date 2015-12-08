@@ -210,11 +210,13 @@ xtype
 			/* vertical bar */
 			content: '';
 			position: absolute;
-			right: 0;
+			right: 11px;
 			@include center(y);
-			height: 90%;
+			top:0;
+			height: 120%;
 			width: 1px;
 			background-color: $color-1;
+			transform:rotateZ(18deg);
 		}
 
 		&.waiting::after {
@@ -255,17 +257,17 @@ xtype
 
 @include keyframes(cd-pulse) {
 	0% {
-		@include transform(translateY(-50%) scale(1));
+		@include transform(translateY(-50%) scale(1) rotateZ(18deg));
 		opacity: 1;
 	}
 
 	40% {
-		@include transform(translateY(-50%) scale(0.9));
+		@include transform(translateY(-50%) scale(0.9) rotateZ(18deg));
 		opacity: 0;
 	}
 
 	100% {
-		@include transform(translateY(-50%) scale(0));
+		@include transform(translateY(-50%) scale(0) rotateZ(18deg));
 		opacity: 0;
 	}
 }

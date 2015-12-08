@@ -1,5 +1,8 @@
 'use strict';
-/*eslint-disable new-cap, no-unused-vars */
+/*eslint-disable new-cap, no-unused-vars, 
+	no-use-before-define, no-trailing-spaces, 
+	no-mixed-spaces-and-tabs, no-multi-spaces,
+	key-spacing */
 /*global  $, TweenMax, TimelineMax */
 var desktop = $('html.desktop').length === 1;
 var mobile = $('html.mobile').length === 1;
@@ -208,19 +211,10 @@ $(function(){
 				typeLettersDelay = 150,
 				selectionDuration = 500,
 				typeAnimationDelay = selectionDuration + 800,
-				//clip effect 
+				//clip effect
 				revealDuration = 600,
 				revealAnimationDelay = 1500;
-			
-			initHeadline();
-			
 
-			function initHeadline() {
-				//insert <i> element for each letter of a changing word
-				singleLetters($('.cd-headline.letters').find('b'));
-				//initialise headline animation
-				animateHeadline($('.cd-headline'));
-			}
 
 			function singleLetters($words) {
 				$words.each(function(){
@@ -228,40 +222,21 @@ $(function(){
 						letters = word.text().split(''),
 						selected = word.hasClass('is-visible');
 					for (var i in letters) {
-						if(word.parents('.rotate-2').length > 0) letters[i] = '<em>' + letters[i] + '</em>';
-						letters[i] = (selected) ? '<i class="in">' + letters[i] + '</i>': '<i>' + letters[i] + '</i>';
+						if(word.parents('.rotate-2').length > 0){
+							letters[i] = '<em>' + letters[i] + '</em>';
+						}
+						letters[i] = (selected) ? '<i class="in">' + letters[i] + '</i>' : '<i>' + letters[i] + '</i>';
 					}
 				    var newLetters = letters.join('');
 				    word.html(newLetters).css('opacity', 1);
 				});
 			}
 
-			function animateHeadline($headlines) {
-				var duration = animationDelay;
-				$headlines.each(function(){
-					var headline = $(this);
-					
-					if(headline.hasClass('loading-bar')) {
-						duration = barAnimationDelay;
-						setTimeout(function(){ headline.find('.cd-words-wrapper').addClass('is-loading') }, barWaiting);
-					} else if (headline.hasClass('clip')){
-						var spanWrapper = headline.find('.cd-words-wrapper'),
-							newWidth = spanWrapper.width() + 10
-						spanWrapper.css('width', newWidth);
-					} else if (!headline.hasClass('type') ) {
-						//assign to .cd-words-wrapper the width of its longest word
-						var words = headline.find('.cd-words-wrapper b'),
-							width = 0;
-						words.each(function(){
-							var wordWidth = $(this).width();
-						    if (wordWidth > width) width = wordWidth;
-						});
-						headline.find('.cd-words-wrapper').css('width', width);
-					};
-
-					//trigger animation
-					setTimeout(function(){ hideWord( headline.find('.is-visible').eq(0) ) }, duration);
-				});
+			function initHeadline() {
+				//insert <i> element for each letter of a changing word
+				singleLetters($('.cd-headline.letters').find('a'));
+				//initialise headline animation
+				animateHeadline($('.cd-headline'));
 			}
 
 			function hideWord($word) {
@@ -274,7 +249,7 @@ $(function(){
 						parentSpan.removeClass('selected'); 
 						$word.removeClass('is-visible').addClass('is-hidden').children('i').removeClass('in').addClass('out');
 					}, selectionDuration);
-					setTimeout(function(){ showWord(nextWord, typeLettersDelay) }, typeAnimationDelay);
+					setTimeout(function(){ showWord(nextWord, typeLettersDelay); }, typeAnimationDelay);
 				
 				} else if($word.parents('.cd-headline').hasClass('letters')) {
 					var bool = ($word.children('i').length >= nextWord.children('i').length) ? true : false;
@@ -290,12 +265,12 @@ $(function(){
 				} else if ($word.parents('.cd-headline').hasClass('loading-bar')){
 					$word.parents('.cd-words-wrapper').removeClass('is-loading');
 					switchWord($word, nextWord);
-					setTimeout(function(){ hideWord(nextWord) }, barAnimationDelay);
-					setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('is-loading') }, barWaiting);
+					setTimeout(function(){ hideWord(nextWord); }, barAnimationDelay);
+					setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('is-loading'); }, barWaiting);
 
 				} else {
 					switchWord($word, nextWord);
-					setTimeout(function(){ hideWord(nextWord) }, animationDelay);
+					setTimeout(function(){ hideWord(nextWord); }, animationDelay);
 				}
 			}
 
@@ -305,8 +280,8 @@ $(function(){
 					$word.addClass('is-visible').removeClass('is-hidden');
 
 				}  else if($word.parents('.cd-headline').hasClass('clip')) {
-					$word.parents('.cd-words-wrapper').animate({ 'width' : $word.width() + 10 }, revealDuration, function(){ 
-						setTimeout(function(){ hideWord($word) }, revealAnimationDelay); 
+					$word.parents('.cd-words-wrapper').animate({ 'width': $word.width() + 10 }, revealDuration, function(){ 
+						setTimeout(function(){ hideWord($word); }, revealAnimationDelay); 
 					});
 				}
 			}
@@ -317,7 +292,7 @@ $(function(){
 				if(!$letter.is(':last-child')) {
 				 	setTimeout(function(){ hideLetter($letter.next(), $word, $bool, $duration); }, $duration);  
 				} else if($bool) { 
-				 	setTimeout(function(){ hideWord(takeNext($word)) }, animationDelay);
+				 	setTimeout(function(){ hideWord(takeNext($word)); }, animationDelay);
 				}
 
 				if($letter.is(':last-child') && $('html').hasClass('no-csstransitions')) {
@@ -332,8 +307,8 @@ $(function(){
 				if(!$letter.is(':last-child')) { 
 					setTimeout(function(){ showLetter($letter.next(), $word, $bool, $duration); }, $duration); 
 				} else { 
-					if($word.parents('.cd-headline').hasClass('type')) { setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('waiting'); }, 200);}
-					if(!$bool) { setTimeout(function(){ hideWord($word) }, animationDelay) }
+					if($word.parents('.cd-headline').hasClass('type')) { setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('waiting'); }, 200); }
+					if(!$bool) { setTimeout(function(){ hideWord($word); }, animationDelay); }
 				}
 			}
 
@@ -349,45 +324,19 @@ $(function(){
 				$oldWord.removeClass('is-visible').addClass('is-hidden');
 				$newWord.removeClass('is-hidden').addClass('is-visible');
 			}
-			var animationDelay = 2500;
- 
-			animateHeadline($('.cd-headline'));
-			 
+			// var animationDelay = 8000;
+
 			function animateHeadline($headlines) {
 				$headlines.each(function(){
 					var headline = $(this);
 					//trigger animation
-					setTimeout(function(){ hideWord( headline.find('.is-visible') ) }, animationDelay);
-					//other checks here ...
+					setTimeout(function(){ hideWord(headline.find('.is-visible')); }, animationDelay);
 				});
 			}
+			initHeadline();
+
+			animateHeadline($('.cd-headline'));
 		});
-		(function(marquee){
-			// function nextMq(){
-			// 	var active = $('li.active', marquee);
-			// 	active = active.length > 0 ? active : $('li', marquee).first();
-			// 	if(active.hasClass('hold')){
-			// 		return;
-			// 	}
-			// 	if(active.next().length){
-			// 		active.next().siblings().removeClass('active');
-			// 		active.next().addClass('active');
-			// 	}else if(active.siblings().length){
-			// 		active.siblings().first().siblings().removeClass('active');
-			// 		active.siblings().first().addClass('active');
-			// 	}
-			// }
-			// if(!$('li.active', marquee).length){
-			// 	$('li', marquee).first().addClass('active');
-			// }
-			// $('li', marquee).hover(function(){
-			// 	$(this).addClass('hold');
-			// }, function(){
-			// 	$(this).removeClass('hold');
-			// });
-			// nextMq();
-			// var mqTick = setInterval(nextMq, 14000);
-		}($('.marquee')));
 	}
 
 	//floating layer
@@ -399,7 +348,7 @@ $(function(){
 
 	//vendors
 	if($('.home .vendors').length){
-		var num = $('.home .vendors ul li').length;
+		// var num = $('.home .vendors ul li').length;
 		var s = $('.home .vendors ul').slick({
 			// dots: true,
 			infinite: true,
@@ -407,15 +356,20 @@ $(function(){
 			slidesToScroll: 9,
 			centerMode: true,
 			variableWidth: true,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 0,
-			// easing: 'linear',
 			arrows: false,
-			cssEase: 'linear',
+			// cssEase: 'linear',
 			pauseOnHover: true,
 			speed: 4000
 		});
-		$('.home .vendors ul li a').eq(num / 2).trigger('click');
+		// $('.home .vendors ul li a').eq(num / 2).trigger('click');
+		// $('.home .vendors ul').on('hover', function(){
+		// 	s.slickPause();
+		// 	$('.slick-track').stop();
+		// }, function(){
+		// 	s.slickPlay();
+		// });
 	}
 
 	//show go to top

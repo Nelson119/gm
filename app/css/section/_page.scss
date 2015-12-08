@@ -185,23 +185,26 @@
 		padding:20px 0;
 		margin-top:0;
 		font-size: percentage(32/14);
+		line-height: 25px;
+		&:before{
+			height:32px;
+			content:' ';
+			display: inline-block;
+			vertical-align: middle;
+		}
 		img{
 			height:25px;
-			display: block;
+			display: inline-block;
+			vertical-align: middle;
 		}
 		sub{
 			font-size: percentage(13/32);
 			color:#787171;
 			display: inline-block;
-			vertical-align: top;
+			vertical-align: bottom;
 			bottom:auto;
 			padding-left:0.5em;
-    		&:before{
-    			height:32px;
-    			content:' ';
-				display: inline-block;
-				vertical-align: bottom;
-    		}
+			line-height: 18px;
 		}
     	@media screen and (max-width: 1170px) {
 
