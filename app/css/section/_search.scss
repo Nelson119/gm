@@ -1,21 +1,37 @@
 .page.search{
 
     @media  screen and (max-width: 1170px) {
-        font-size: 160%;
+        h2{
+            img{
+                height:20px;
+            }
+            &:before{
+                top:55%;
+            }
+        }
     }
     ul{
         margin-top:30px;
+        position:relative;
+        @media  screen and (max-width: 1170px) {
+            font-size: 160%;
+        }
     }
     li{
         display: inline-block;
+        max-width: 100%;
         h5{
             margin-top:0;
             margin-bottom:10px;
             min-height: 0;
+            @media  screen and (max-width: 1170px) {
+                line-height: 1.2em;
+                margin-bottom:0.2em;
+            }
             &:before{
                 margin:0 0 10px;
                 @media  screen and (max-width: 1170px) {
-                    margin: 0 0 1.5em;
+                    margin: 0 0 0.2em;
                 }
             }
         }
@@ -29,7 +45,6 @@
         p{
             font-size:percentage(14/14);
             color:#53565a;
-            margin-top:10px;
         }
         &+li{
             margin-top:15px;

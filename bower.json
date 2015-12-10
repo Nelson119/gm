@@ -16,7 +16,9 @@
     "within-viewport": "~1.0.0",
     "bootstrap-fileinput": "~4.2.8",
     "flexslider": "~2.6.0",
-    "lightgallery": "~1.2.7"
+    "lightgallery": "~1.2.7",
+    "owl.carousel": "~2.0.0-beta.3",
+    "jquery.easing": "~1.3.1"
   },
   "overrides": {
     "bootstrap-sass": {

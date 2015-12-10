@@ -348,28 +348,53 @@ $(function(){
 
 	//vendors
 	if($('.home .vendors').length){
-		// var num = $('.home .vendors ul li').length;
+		var num = $('.home .vendors ul li').length;
+		// $('.home .vendors ul').owlCarousel({
+		// 	items:9,
+		// 	autoWidth:true,
+		// 	autoPlay:true,
+		// 	center:true,
+		// 	autoplaySpeed: 5,
+		// 	autoplayTimeout:1,
+		// 	dots: false
+		// });
 		var s = $('.home .vendors ul').slick({
 			// dots: true,
 			infinite: true,
-			slidesToShow: 9,
-			slidesToScroll: 9,
+			slidesToShow: 20,
+			slidesToScroll: 0,
 			centerMode: true,
 			variableWidth: true,
-			// autoplay: true,
+			autoplay: true,
 			autoplaySpeed: 0,
 			arrows: false,
-			// cssEase: 'linear',
+			cssEase: 'linear',
 			pauseOnHover: true,
 			speed: 4000
 		});
-		// $('.home .vendors ul li a').eq(num / 2).trigger('click');
-		// $('.home .vendors ul').on('hover', function(){
+	 // 	$.fn.slickPause = function() {
+		//     var _ = this;
+		//     return _.each(function(index, element) {
+
+		//        //start hack
+		//         var st = element.slick.$slideTrack.get(0);
+		//         element.slick.$slideTrack.css({
+		//             transition: '',
+		//             webkitTransform: window.getComputedStyle(st).webkitTransform,
+		//             transform: window.getComputedStyle(st).transform
+		//         });
+		//        	element.slick.animating = false;
+		//       	//end hack
+
+		//         element.slick.autoPlayClear();
+		//         element.slick.paused = true;
+
+		//     });
+		// };
+		// $('.home .vendors ul').mouseover(function(){
 		// 	s.slickPause();
-		// 	$('.slick-track').stop();
-		// }, function(){
-		// 	s.slickPlay();
 		// });
+		$('.home .vendors ul li a').eq(num / 2).trigger('click');
 	}
 
 	//show go to top

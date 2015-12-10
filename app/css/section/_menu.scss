@@ -532,6 +532,9 @@ header {
           &:hover a{
             filter:invert(1);
           }
+          &.active a{
+            filter:invert(1);
+          }
           a{
             font-size: percentage(16/14);
             padding: 0 10px;
@@ -661,7 +664,7 @@ header {
       }
       li{
         color:#e74b8c;
-          letter-spacing: 0.1em;
+        letter-spacing: 0.1em;
         a{
           vertical-align: top;
           color:#e74b8c;
@@ -680,6 +683,14 @@ header {
           vertical-align: top;
           font-size: percentage(11/14);
           padding:0 1px;
+        }
+        @media screen and (max-width: 767px) {
+          &:nth-child(2){
+            max-width:245px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
         }
       }
       @media screen and (max-width: 767px) {
