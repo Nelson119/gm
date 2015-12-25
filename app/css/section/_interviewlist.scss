@@ -39,7 +39,8 @@
 		margin-top:20px;
     	h3{
     		margin:0;
-    		font-size: percentage(18/14);
+    		font-size: percentage(20/14);
+            font-weight: 600;
     		text-align:left;
     		font-family:inherit;
     	}
@@ -49,6 +50,9 @@
     			width:100%;
     		}
     	}
+        p{
+            font-size: 15px;
+        }
     	p + p{
     		margin:1.8em 0 0;
     	}

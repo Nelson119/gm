@@ -1,9 +1,16 @@
 .page.home{
   min-width:320px;
+  margin-top:0;
   .reports{
     h3{
       b{
         background-image:url(../img/common/reports.svg);
+      }
+    }
+    ul{
+      margin-top:0;
+      li{
+        padding-top:0;
       }
     }
     margin-top:30px;

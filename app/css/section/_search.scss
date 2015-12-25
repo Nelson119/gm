@@ -1,7 +1,12 @@
 .page.search{
 
-    @media  screen and (max-width: 1170px) {
-        h2{
+    h2{
+        @media  screen and (min-width: 1170px) {
+            sub{
+                display: none;
+            }
+        }
+        @media  screen and (max-width: 1170px) {
             img{
                 height:20px;
             }

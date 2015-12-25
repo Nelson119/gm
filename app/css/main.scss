@@ -2,6 +2,7 @@ $icon-font-path: '../fonts/';
 
 @import "section/font";
 @import "headline/headline";
+@import "slick-theme";
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
@@ -26,7 +27,7 @@ $disable-warnings: false !default;
 body {
 
   background:#000;
-  font-family:  "nav","Lantinghei SC", "STHeiti",メイリオ,Meiryo,"ヒラギノ角ゴ Pro w3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS P Gothic",STXihei,"HEITI TC",黑體-繁,黑體,Arial,Helvetica,sans-serif,"Segoe UI","Helvetica Neue",cursive;
+  font-family:  "nav","微軟正黑體", "Lantinghei SC", "STHeiti",メイリオ,Meiryo,"ヒラギノ角ゴ Pro w3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS P Gothic",STXihei,"HEITI TC",黑體-繁,黑體,Arial,Helvetica,sans-serif,"Segoe UI","Helvetica Neue",cursive;
   color:#696969;
   ::selection,::-moz-selection {
     background:$main-active-color;
@@ -36,8 +37,8 @@ body {
     background:rgba(207,185,100,0.1);
     color:inherit;
   }
-  @media screen and (max-width: 768px) {
-    font-size:10px;
+  @media screen and (max-width: 1170px) {
+    font-size:14px;
   }
   a{
     color:#000;
@@ -81,7 +82,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #545454;
+  // border-top: 1px solid #545454;
   background:#000;
   text-align: center;
   .logo{
@@ -208,6 +209,7 @@ body {
 
 @import "section/vendor-list";
 
+@import "section/event";
 
 
 /* Responsive: Portrait tablets and up */

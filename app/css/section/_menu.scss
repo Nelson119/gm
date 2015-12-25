@@ -200,7 +200,8 @@ body{
     text-align: center;
     transition-duration: 0s;
     transition-delay: 0s;
-    background:rgba(255,255,255,0.8);
+    // background:rgba(255,255,255,0.8);    
+    background: #FFF;
     transform-origin:bottom center 0;
     svg#logo{
       margin-top:1px;
@@ -431,14 +432,14 @@ header {
     background: #000;
     height:78px;
     @media screen and (max-width: 1170px) {
-      height:20px;
+      height:15px;
       background: rgba(0,0,0,0);
       .marquee{
         margin-top:96px;
       }
     }
     @media screen and (max-width: 767px) {
-      height:20px;
+      height:15px;
       .marquee{
         margin-top:40px;
       }
@@ -649,10 +650,18 @@ header {
     }
   }
   .marquee{
-    background: rgba(255,255,255,0.7);
+    // background: rgba(255,255,255,0.7);
+    background: #FFF;
     text-align: center;
-    padding:3px 0;
-    height:20px;
+    padding:5px 0 22px;
+    height:35px;
+    .cd-headline {
+      max-height: 35px;
+      .cd-words-wrapper::after{
+        top:13px;
+        height:60%;
+      }
+    }
     ul{
       display: inline-block;
       height: 20px;
@@ -668,7 +677,7 @@ header {
         a{
           vertical-align: top;
           color:#e74b8c;
-          font-size: percentage(11/14);
+          font-size: percentage(13/12);
         }
         &:hover{
           span{
@@ -683,6 +692,9 @@ header {
           vertical-align: top;
           font-size: percentage(11/14);
           padding:0 1px;
+        }
+        &:first-child,&:last-child{
+          line-height: 2em;
         }
         @media screen and (max-width: 767px) {
           &:nth-child(2){
