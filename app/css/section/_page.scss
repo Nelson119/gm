@@ -731,6 +731,9 @@
 		h5{
 			position:relative;
 			margin:20px auto 0;
+		    height: 42px;
+		    min-height: 42px;
+		    overflow: hidden;
 			&:before{
 				display: none;
 			}
@@ -740,6 +743,20 @@
 	  			display: block;
 	  			content:' ';
 	  			margin:18px auto;
+				width:42px;
+				position:absolute;
+				margin-left:-21px;
+				left:50%;
+			}
+		}
+		h5 + p{
+			margin-top:40px;
+			&:before{
+	  			border-top: 3px solid $main-active-color;
+	  			height: 0;
+	  			display: block;
+	  			content:' ';
+	  			margin:-22px auto;
 				width:42px;
 				position:absolute;
 				margin-left:-21px;

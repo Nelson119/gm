@@ -25,6 +25,12 @@
     li{
         display: inline-block;
         max-width: 100%;
+        margin:0 -10px;
+        @media screen and (max-width: 1170px) {
+            >div,>aside{
+                padding:0 8px;
+            }
+        }
         h5{
             margin-top:0;
             margin-bottom:10px;

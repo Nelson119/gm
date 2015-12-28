@@ -1,7 +1,9 @@
 .page.interview-list{
 	min-height:600px;
     h2{
-
+        @media screen and (max-width: 1170px) {
+            margin-bottom: 0;
+        }
     }
     hr{
         margin-top:30px;
