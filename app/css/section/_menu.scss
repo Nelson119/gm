@@ -270,9 +270,17 @@ body{
         display: inline-block;
         vertical-align: middle;
         opacity:0;
-        color:rgba(0,0,0,0);
+        color:#b5b5b5 !important;
+        font-size: 12px;
+        line-height: 20px;
         &:hover{
           color:$main-active-color;
+        }
+        &:before{
+          content:attr(title);
+          display: block;
+          font-size: 18px;
+          color:#fff;
         }
       }
       ol {

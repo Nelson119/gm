@@ -38,11 +38,50 @@
         li{
             padding: 30px 35px 25px;
         }
+        .slick-dots{
+            bottom:50px;
+            display: none !important;
+        }
+        .slick-active{
+            position:relative;
+            &:after{
+                opacity: 0;
+                transition-duration:0.25s;
+            }
+        }
+        .slick-list{
+            li{
+                margin: 0 7px;
+                min-width: 290px;
+            }
+        }
+        .slick-arrow{
+            position:absolute;
+            width:25px;
+            height:45px;
+            z-index: 1;
+            top:50%;
+            margin-top: -25px;
+            &:hover{
+                filter:invert(0.15);
+            }
+            &:before{
+                display: none;
+            }
+        }
+        .slick-prev{
+            left:-30px;
+            background:url(../img/kv/arrow-prev.png);
+        }
+        .slick-next{
+            right:-30px;
+            background:url(../img/kv/arrow-next.png) no-repeat;
+        }
     }
     .sm-three-col li:hover{
         border-color:inherit;
         h5{
-            &:after{
+            &+i{
                 transform: rotateZ(-35deg);
                 transition:.5s;
             }
