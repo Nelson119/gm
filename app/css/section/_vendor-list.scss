@@ -39,8 +39,27 @@
             padding: 30px 35px 25px;
         }
         .slick-dots{
-            bottom:50px;
-            display: none !important;
+            bottom:-30px!important;
+            margin: 0 -4px;
+            padding-left:0;
+            @media screen and (max-width: 768px) {
+                bottom:-40px!important;
+
+            }
+            text-align: center;
+            li{
+                padding:0;
+                width:10px!important;
+                height:10px!important;
+                display: inline-block!important;
+                border-radius:50%;
+                background:#959595;
+                margin:10px 6px;
+                &:hover,&.slick-active{
+                    background:#656565;
+                    border-color:#656565;
+                }
+            }
         }
         .slick-active{
             position:relative;
@@ -49,10 +68,12 @@
                 transition-duration:0.25s;
             }
         }
-        .slick-list{
-            li{
-                margin: 0 7px;
-                min-width: 290px;
+        @media screen and (max-width: 768px) {
+            .slick-list{
+                li{
+                    margin: 0 7px;
+                    min-width: 290px;
+                }
             }
         }
         .slick-arrow{

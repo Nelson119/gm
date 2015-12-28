@@ -265,7 +265,7 @@ body{
         vertical-align: middle;
         content:' ';
       }
-      a{
+      >a{
         color:#fff;
         display: inline-block;
         vertical-align: middle;
@@ -301,6 +301,10 @@ body{
           width:50%;
           margin:0;
           letter-spacing: 0.2em;
+          a{
+            font-size: 18px;
+            color:#fff;
+          }
         }
       }
       &.on{
@@ -354,7 +358,7 @@ body{
   }
 }
 header {
-  height:258px;
+  height:293px;
   @media screen and (max-width: 1170px) {
     height:auto;
   }
@@ -387,7 +391,7 @@ header {
       text-align: center;
       transition-duration: 0s;
       transition-delay: 0s;
-      background:rgba(255,255,255,0.8);
+      background:#fff;
       transform-origin:bottom center 0;
       @media screen and (max-width: 1170px) {
         display: none;
@@ -658,8 +662,8 @@ header {
     }
   }
   .marquee{
-    // background: rgba(255,255,255,0.7);
-    background: #FFF;
+    background: rgba(255,255,255,0.7);
+    // background: #FFF;
     text-align: center;
     padding:5px 0 22px;
     height:35px;

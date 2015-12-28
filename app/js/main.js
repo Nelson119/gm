@@ -447,32 +447,22 @@ $(function(){
 	//
 	if($('.page.vendor-list').length){
 		var ul = $('.page.vendor-list .sm-three-col >ul:eq(0)');
-		ul.clone().addClass('hidden-lg').insertAfter(ul).slick({
-			infinite: true,
-			// speed: 300,
-			// arrows: false,
-			dots: true,
+		ul.clone().addClass('hidden-lg hidden-md').insertAfter(ul).slick({
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			// variableWidth: false,
-			// autoplay: true,
-			// autoplaySpeed: 3000,
+			dots: true,
+			arrows: false,
 			easing: 'ease-out',
 			pauseOnHover: true,
 			speed: 750
 		});
-		ul.addClass('visible-lg').slick({
+		ul.addClass('visible-lg visible-md').slick({
 			infinite: true,
-			// speed: 300,
-			// arrows: false,
+			arrows: false,
 			dots: true,
-			infinite: true,
 			slidesToShow: 3,
-			slidesToScroll: 3,
-			// variableWidth: false,
-			// autoplay: true,
-			// autoplaySpeed: 3000,
+			slidesToScroll: 1,
 			easing: 'ease-out',
 			pauseOnHover: true,
 			speed: 750

@@ -11,6 +11,9 @@
       margin-top:0;
       li{
         padding-top:0;
+        &:before{
+          top:2em;
+        }
       }
     }
     margin-top:30px;
@@ -23,6 +26,20 @@
       b{
         background-image:url(../img/common/customs.svg);
       }
+    }
+    @media screen and (max-width: 1170px) {
+        margin-top: 0;
+        h5{
+            margin-bottom: 20px;
+            margin-top: -90px;
+            height:90px;
+        }
+        .view-counter{
+            margin-top: 65px;
+            position: relative;
+            text-align: left;
+            top:0;
+        }
     }
     .text-content{
       margin-bottom:30px;
