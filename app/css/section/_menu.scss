@@ -71,6 +71,8 @@ body{
   min-width: 320px;
   display: none;
   height: 40px;
+  transform: translate3d(0px, 0px, 1px);
+  will-change: transform;
   @media  (min-width: 768px) and (max-width: 1170px) {
     height: 96px;
   }
@@ -222,12 +224,15 @@ body{
       background:rgba(0,0,0,0);
       position:fixed;
       top:0;
-      left:50%;
-      margin-left:-119px;
+      // left:50%;
+      // margin-left:-119px;
       height:96px;
+      width:100%;
       opacity: 1!important;
 
       svg#logo{
+        max-width: 50%;
+        margin: 0 auto;
         height:50%;
         top:18%;
         fill:#fff;
@@ -242,8 +247,8 @@ body{
     }
     @media screen and (max-width: 768px) {
       height:40px;
-      left:50%;
-      margin-left:-60px;
+      // left:50%;
+      // margin-left:-60px;
     }
   }
   ul{
@@ -403,12 +408,12 @@ header {
         background:rgba(0,0,0,0);
         position:fixed;
         top:0;
-        left:50%;
-        margin-left:-119px;
         height:96px;
         opacity: 1!important;
-
+        width:100%;
         svg#logo{
+          max-width:50%;
+          margin:0 auto;
           height:50%;
           top:22%;
           fill:#fff;
@@ -423,8 +428,6 @@ header {
       }
       @media screen and (max-width: 768px) {
         height:40px;
-        left:50%;
-        margin-left:-60px;
       }
     }
   }
