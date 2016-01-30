@@ -38,11 +38,71 @@
         li{
             padding: 30px 35px 25px;
         }
+        .slick-dots{
+            bottom:-30px!important;
+            margin: 0 -4px;
+            padding-left:0;
+            @media screen and (max-width: 768px) {
+                bottom:-40px!important;
+
+            }
+            text-align: center;
+            li{
+                padding:0;
+                width:10px!important;
+                height:10px!important;
+                display: inline-block!important;
+                border-radius:50%;
+                background:#959595;
+                margin:10px 6px;
+                &:hover,&.slick-active{
+                    background:#656565;
+                    border-color:#656565;
+                }
+            }
+        }
+        .slick-active{
+            position:relative;
+            &:after{
+                opacity: 0;
+                transition-duration:0.25s;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .slick-list{
+                li{
+                    margin: 0 7px;
+                    min-width: 290px;
+                }
+            }
+        }
+        .slick-arrow{
+            position:absolute;
+            width:25px;
+            height:45px;
+            z-index: 1;
+            top:50%;
+            margin-top: -25px;
+            &:hover{
+                filter:invert(0.15);
+            }
+            &:before{
+                display: none;
+            }
+        }
+        .slick-prev{
+            left:-30px;
+            background:url(../img/kv/arrow-prev.png);
+        }
+        .slick-next{
+            right:-30px;
+            background:url(../img/kv/arrow-next.png) no-repeat;
+        }
     }
     .sm-three-col li:hover{
         border-color:inherit;
         h5{
-            &:after{
+            &+i{
                 transform: rotateZ(-35deg);
                 transition:.5s;
             }

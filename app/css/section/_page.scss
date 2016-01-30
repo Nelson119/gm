@@ -2,7 +2,7 @@
 	line-height: 1.5em;
 	letter-spacing: 1px;
 	background:#fff;
-	margin-top:20px;
+	// margin-top:20px;
 	
 	@media screen and (max-width: 1170px) {
 		line-height: 1.8em;
@@ -26,7 +26,7 @@
 	.container{
 		h3{
 			font-family: 'Times New Roman';
-			font-size:percentage(44/14);
+			font-size:percentage(37/14);
 			text-align: center;
 			font-weight: 500;
 			color:#000;
@@ -730,37 +730,28 @@
 		}
 		h5{
 			position:relative;
-			margin:20px auto 0;
+			margin:20px auto 43px;
 		    height: 42px;
-		    min-height: 42px;
+		    // max-height: 42px;
+		    min-height: 0;
 		    overflow: hidden;
+	  		@media screen and (max-width: 1170px) {
+				line-height: 1.6em;
+	  		}
 			&:before{
 				display: none;
 			}
-			&:after{
+			&+i{
 	  			border-top: 3px solid $main-active-color;
 	  			height: 0;
 	  			display: block;
 	  			content:' ';
-	  			margin:18px auto;
+	  			margin:0 auto;
 				width:42px;
 				position:absolute;
 				margin-left:-21px;
 				left:50%;
-			}
-		}
-		h5 + p{
-			margin-top:40px;
-			&:before{
-	  			border-top: 3px solid $main-active-color;
-	  			height: 0;
-	  			display: block;
-	  			content:' ';
-	  			margin:-22px auto;
-				width:42px;
-				position:absolute;
-				margin-left:-21px;
-				left:50%;
+				margin-top:-21px;
 			}
 		}
 		h5,p{

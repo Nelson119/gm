@@ -1,4 +1,4 @@
-.page.report-list,.page.customs-list{
+.page.report-list,.page.customs-list,.page.creativity-list{
 	min-height:600px;
     h2{
         @media screen and (max-width: 1170px) {
@@ -50,6 +50,7 @@
             @media screen and (max-width: 1170px) {
                 .view-counter{
                     padding:0;
+                    line-height: 30px;
                 }
             }
             h5{

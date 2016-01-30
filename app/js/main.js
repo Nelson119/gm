@@ -445,6 +445,30 @@ $(function(){
 	}
 
 	//
+	if($('.page.vendor-list').length){
+		var ul = $('.page.vendor-list .sm-three-col >ul:eq(0)');
+		ul.clone().addClass('hidden-lg hidden-md').insertAfter(ul).slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true,
+			arrows: false,
+			easing: 'ease-out',
+			pauseOnHover: true,
+			speed: 750
+		});
+		ul.addClass('visible-lg visible-md').slick({
+			infinite: true,
+			arrows: false,
+			dots: true,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			easing: 'ease-out',
+			pauseOnHover: true,
+			speed: 750
+		});
+	}
+	//
 	if($('.page.vendors #gallery .slides').length){
 		$('.page.vendors #gallery .slides').slick({
 			infinite: true,
